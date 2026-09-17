@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About Auto Spare Parts Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+:root{--obsidian:#0A0C0D;--carbon:#111416;--graphite:#1A1D20;--surface:#F1F0EB;--ivory:#FAF9F5;--red:#E33B32;--orange:#F47A38;--steel:#8B9297;--muted:#62696D;--gold:#C9A45C;--line:rgba(255,255,255,.10);--shadow:0 22px 60px rgba(0,0,0,.16);--ease:cubic-bezier(.2,.75,.2,1)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{font-family:Inter,Arial,sans-serif;background:var(--surface);color:var(--obsidian);overflow-x:hidden;line-height:1.55}
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    .container{width:min(1180px,92%);margin:auto}
+    .section{padding:40px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}
+    .eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:800;margin-bottom:10px}
+    h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.04}
+    h2{font-size:clamp(32px,4vw,52px)}
+    .muted{color:#697176}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 18px;border:1px solid transparent;background:var(--red);color:#fff;font-weight:800;transition:.3s var(--ease);position:relative;overflow:hidden}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(227,59,50,.25)}
+    .btn.dark{background:var(--obsidian);color:#fff}
+    .btn.ghost{background:transparent;border-color:rgba(10,12,13,.18);color:var(--obsidian)}
+    .btn.ghost:hover{background:var(--obsidian);color:#fff}
+    .glass{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    .card{background:#fff;border:1px solid rgba(10,12,13,.08);transition:.35s var(--ease);position:relative;overflow:hidden}
+    .card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:rgba(227,59,50,.28)}
+    .site-header{position:sticky;top:0;z-index:1000;background:rgba(10,12,13,.92);color:#fff;border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
+    .nav{height:90px;display:grid;grid-template-columns:190px 1fr auto;align-items:center;gap:20px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.7px}
+    .logo-img{height:100px;width:auto;display:block;object-fit:contain}
+    .logo-mark{width:32px;height:32px;background:var(--red);display:grid;place-items:center;transform:skew(-10deg);color:#fff}
+    .logo span:last-child{color:#fff}
+    .logo em{font-style:normal;color:var(--red)}
+    .nav-links{display:flex;justify-content:center;gap:26px;font-size:13px;font-weight:700}
+    .nav-links a{position:relative;padding:28px 0;color:#c9ced1;transition:.25s}
+    .nav-links a:hover,.nav-links a.active{color:#fff}
+    .nav-links a.active:after{content:"";position:absolute;left:0;right:0;bottom:17px;height:2px;background:var(--red)}
+    .nav-login{justify-self:end}
+    .menu-btn{display:none;background:none;border:0;color:#fff;font-size:24px}
+    .mobile-drawer{display:none}
+    .hero{background:var(--obsidian);color:#fff;min-height:680px;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(10,12,13,.98) 18%,rgba(10,12,13,.76) 53%,rgba(10,12,13,.18)),url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=70&fm=webp") center/cover}
+    .hero .container{position:relative;z-index:1}
+    .hero-grid{min-height:680px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px}
+    .hero h1{font-size:clamp(48px,6vw,82px);max-width:720px}
+    .hero h1 span{color:var(--red)}
+    .hero p{max-width:560px;color:#c7cccf;margin:24px 0 30px;font-size:17px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-actions .ghost{border-color:#5a6064;color:#fff}
+    .float-card{position:absolute;padding:14px 16px;right:4%;bottom:15%;color:#fff}
+    .float-card strong{display:block;font-size:22px}
+    .float-card small{color:#b8bec2}
+    .vehicle{background:var(--carbon);color:#fff;margin-top:-1px}
+    .vehicle-box{padding:30px;border:1px solid rgba(255,255,255,.1);box-shadow:var(--shadow)}
+    .vehicle-grid{display:grid;grid-template-columns:repeat(4,1fr) 150px;gap:10px}
+    .field{display:flex;flex-direction:column;gap:7px}
+    .field label{font-size:11px;text-transform:uppercase;letter-spacing:1.4px;font-weight:800;color:#92999d}
+    .field input,.field select,.field textarea{width:100%;border:1px solid rgba(10,12,13,.13);background:#fff;padding:13px 14px;outline:none;transition:.25s}
+    .dark-field input,.dark-field select{background:#181c1e;color:#fff;border-color:rgba(255,255,255,.12)}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(227,59,50,.1)}
+    .category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .category-card{min-height:270px;color:#fff;background:#15191c}
+    .category-card img{width:100%;height:180px;object-fit:cover;transition:.5s var(--ease)}
+    .category-card:hover img{transform:scale(1.05)}
+    .category-body{padding:18px}
+    .category-body h3{font-size:20px;margin-bottom:5px}
+    .category-body p{font-size:13px;color:#aeb5b9}
+    .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .product-img{height:210px;background:#f7f7f5;display:grid;place-items:center;overflow:hidden;position:relative}
+    .product-img img{width:100%;height:100%;object-fit:contain;transition:.5s var(--ease)}
+    .card:hover .product-img img{transform:scale(1.07)}
+    .badge{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;padding:5px 8px;font-size:10px;font-weight:900}
+    .heart{position:absolute;top:10px;right:10px;width:32px;height:32px;border:1px solid #ddd;background:#fff;display:grid;place-items:center}
+    .product-info{padding:17px}
+    .brand{font-size:10px;letter-spacing:1.5px;font-weight:900;color:var(--steel)}
+    .product-info h3{font-size:16px;margin:6px 0 8px}
+    .rating{color:#c08d21;font-size:12px}
+    .price{margin-top:10px;font-weight:900;font-size:18px}
+    .old{text-decoration:line-through;color:#9aa0a4;font-size:12px;margin-left:5px;font-weight:500}
+    .product-actions{display:flex;gap:8px;margin-top:14px}
+    .product-actions .btn{padding:10px 12px;font-size:12px;flex:1;justify-content:center}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+    .split>div{min-height:430px}
+    .split-media{background:#15191c;overflow:hidden}
+    .split-media img{width:100%;height:100%;object-fit:cover;transition:.6s}
+    .split:hover .split-media img{transform:scale(1.03)}
+    .split-content{background:var(--obsidian);color:#fff;padding:clamp(30px,5vw,70px);display:flex;flex-direction:column;justify-content:center}
+    .split-content p{color:#b8bec2;margin:20px 0}
+    .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+    .stat{padding:22px;background:#fff;border:1px solid rgba(0,0,0,.07);transition:.3s}
+    .stat:hover{transform:translateY(-5px);border-color:var(--red)}
+    .stat strong{font-size:34px;font-family:"Space Grotesk"}
+    .stat span{display:block;color:#6d7478;font-size:12px}
+    .deals{background:#111416;color:#fff}
+    .deal-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+    .deal{min-height:260px;position:relative;overflow:hidden}
+    .deal img{width:100%;height:100%;object-fit:cover;transition:.6s}
+    .deal:hover img{transform:scale(1.06)}
+    .deal:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent 65%)}
+    .deal-content{position:absolute;z-index:1;left:22px;bottom:20px}
+    .deal-content h3{font-size:25px}
+    .deal-content p{color:#d2d6d8;margin:5px 0 12px}
+    .brands{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .brand-box{padding:24px;border:1px solid rgba(10,12,13,.1);background:#fff;text-align:center;font-weight:900;letter-spacing:2px;transition:.3s}
+    .brand-box:hover{background:var(--obsidian);color:#fff;transform:translateY(-5px)}
+    .timeline{display:grid;grid-template-columns:repeat(5,1fr);position:relative;margin:38px 0}
+    .timeline:before{content:"";position:absolute;top:18px;left:10%;right:10%;height:2px;background:#ddd}
+    .step{position:relative;text-align:center}
+    .dot{width:36px;height:36px;margin:auto;border:2px solid #ddd;background:#fff;display:grid;place-items:center;position:relative;z-index:1;font-size:12px;font-weight:900}
+    .step.done .dot{background:var(--red);border-color:var(--red);color:#fff}
+    .step span{display:block;margin-top:12px;font-size:12px;font-weight:800}
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .quote{padding:28px}
+    .quote p{font-size:16px;margin:18px 0}
+    .person{font-weight:900}
+    .person small{display:block;color:#777;font-weight:500}
+    .cta{background:var(--red);color:#fff;padding:64px 0}
+    .cta-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .cta .btn{background:#fff;color:var(--obsidian)}
+    .site-footer{background:var(--obsidian);color:#fff;padding:65px 0 20px}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:45px}
+    .footer-grid h4{font-family:"Space Grotesk";margin-bottom:18px}
+    .footer-grid ul{list-style:none;display:grid;gap:9px}
+    .footer-grid li,.footer-grid p{color:#9da5a9;font-size:13px}
+    .social{display:flex;gap:9px;margin-top:18px}
+    .social a{width:36px;height:36px;border:1px solid #353b3f;display:grid;place-items:center;transition:.25s}
+    .social a:hover{background:var(--red);border-color:var(--red);transform:translateY(-3px)}
+    .footer-bottom{border-top:1px solid #262b2e;margin-top:45px;padding-top:18px;display:flex;justify-content:space-between;color:#737b7f;font-size:11px}
+    .page-hero{background:var(--obsidian);color:#fff;padding:90px 0}
+    .page-hero h1{font-size:clamp(42px,6vw,74px)}
+    .page-hero p{max-width:650px;color:#aeb5b9;margin-top:18px}
+    .filters-layout{display:grid;grid-template-columns:240px 1fr;gap:28px}
+    .filters{background:#fff;padding:22px;height:max-content;position:sticky;top:95px}
+    .filter-group{padding:17px 0;border-bottom:1px solid #eee}
+    .filter-group:last-child{border:0}
+    .filter-group h4{margin-bottom:12px}
+    .filter-group label{display:flex;gap:8px;margin:8px 0;font-size:13px}
+    .sort-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+    .mobile-filter{display:none}
+    .category-large{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+    .category-large .card{min-height:310px;display:grid;grid-template-columns:1fr 1fr}
+    .category-large img{width:100%;height:100%;object-fit:cover}
+    .category-large .content{padding:30px;display:flex;flex-direction:column;justify-content:center}
+    .category-large .content h3{font-size:28px}
+    .content p{color:#687075;margin:12px 0 20px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .info-card{padding:22px;background:#fff}
+    .info-card i{font-size:20px;color:var(--red);margin-bottom:10px}
+    .map{min-height:380px;border:0;width:100%}
+    .auth{min-height:100vh;background:var(--obsidian);color:#fff;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+    .auth-media{position:relative;min-height:100vh;overflow:hidden}
+    .auth-media:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,12,13,.35),rgba(10,12,13,.75))}
+    .auth-media img{width:100%;height:100%;object-fit:cover}
+    .auth-copy{position:absolute;z-index:1;left:8%;right:8%;bottom:9%;}
+    .auth-copy h1{font-size:clamp(40px,5vw,70px)}
+    .auth-copy p{color:#c7cccf;margin-top:16px;max-width:500px}
+    .auth-panel{background:#f3f2ee;color:var(--obsidian);min-height:100vh;overflow-y:auto;padding:42px clamp(25px,6vw,80px);display:flex;align-items:center}
+    .auth-inner{width:min(500px,100%);margin:auto}
+    .auth-logo{margin-bottom:30px;color:var(--obsidian)}
+    .auth-logo .logo-mark{color:#fff}
+    .auth-tabs{display:grid;grid-template-columns:1fr 1fr;background:#deddd8;padding:4px;margin-bottom:25px}
+    .auth-tabs a{padding:12px;text-align:center;font-weight:900;font-size:12px}
+    .auth-tabs a.active{background:var(--obsidian);color:#fff}
+    .role-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0 20px}
+    .role{padding:13px;border:1px solid #d5d4ce;background:#fff;text-align:center;font-weight:900;font-size:12px;transition:.25s}
+    .role.active,.role:hover{background:var(--red);color:#fff;border-color:var(--red)}
+    .auth-form{display:grid;gap:15px}
+    .remember{display:flex;justify-content:space-between;font-size:12px;color:#60676b}
+    .error{font-size:11px;color:#c52e28;min-height:14px}
+    .auth-social{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .social-btn{border:1px solid #d4d3ce;background:#fff;padding:11px}
+    .auth-home{margin-top:15px;width:100%;justify-content:center}
+    .auth-note{font-size:11px;color:#777;margin-top:20px}
+    .dashboard{min-height:100vh;background:#f0efea}
+    .dash-sidebar{position:fixed;left:0;top:0;bottom:0;width:255px;background:var(--obsidian);color:#fff;padding:25px 16px;z-index:1100}
+    .dash-logo{margin:0 10px 35px}
+    .dash-nav{display:grid;gap:4px}
+    .dash-nav button{background:none;border:0;color:#aab1b5;text-align:left;padding:13px 14px;display:flex;gap:11px;align-items:center;font-weight:700;font-size:13px}
+    .dash-nav button:hover,.dash-nav button.active{background:#1d2225;color:#fff;border-left:3px solid var(--red)}
+    .dash-main{margin-left:255px;padding:30px}
+    .dash-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}
+    .user-chip{background:#fff;border:1px solid #ddd;padding:10px 14px;font-size:12px}
+    .dash-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .dash-card{background:#fff;border:1px solid #ddd;padding:20px;transition:.3s}
+    .dash-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .dash-card strong{font-size:30px;font-family:"Space Grotesk"}
+    .panel{display:none;margin-top:18px}
+    .panel.active{display:block;animation:fadeUp .45s var(--ease)}
+    .table-wrap{background:#fff;border:1px solid #ddd;overflow:auto}
+    .table{width:100%;border-collapse:collapse;min-width:650px}
+    .table th,.table td{padding:14px;border-bottom:1px solid #eee;text-align:left;font-size:12px}
+    .status{display:inline-block;padding:5px 8px;background:#ecefea;font-weight:800}
+    .status.red{background:#fde6e4;color:#b42d27}
+    .mobile-dash-btn{display:none}
+    .notfound{min-height:100vh;background:var(--obsidian);color:#fff;display:grid;place-items:center;text-align:center;padding:30px;overflow:hidden}
+    .notfound h1{font-size:clamp(110px,20vw,240px);color:var(--red)}
+    .notfound h2{font-size:clamp(30px,5vw,60px)}
+    .notfound p{color:#aeb5b9;margin:15px auto 25px;max-width:520px}
+    .reveal{opacity:0;transform:translateY(24px);transition:.75s var(--ease)}
+    .reveal.show{opacity:1;transform:none}
+    .toast{position:fixed;right:22px;bottom:22px;z-index:2000;background:var(--obsidian);color:#fff;border-left:3px solid var(--red);padding:13px 16px;transform:translateY(120px);transition:.35s var(--ease);font-size:12px}
+    .toast.show{transform:none}
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(18px)}
+      to{opacity:1;transform:none}
+      }
+    @media(max-width:900px){
+      .nav{grid-template-columns:1fr auto;height:68px}
+      .nav-links,.nav-login,.nav-right{display:none}
+      .menu-btn{display:block}
+      .mobile-drawer{position:fixed;inset:0 0 0 auto;width:min(360px,88%);background:var(--obsidian);z-index:1200;padding:24px;transform:translateX(100%);transition:.4s var(--ease);display:block;border-left:1px solid #292e31}
+      .mobile-drawer.open{transform:none}
+      .drawer-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:35px}
+      .drawer-close{background:none;border:0;color:#fff;font-size:26px}
+      .drawer-links{display:grid;gap:6px}
+      .drawer-links a{padding:15px;border-bottom:1px solid #24292c;color:#d3d8da}
+      .drawer-login{margin-top:25px;width:100%;justify-content:center}
+      .hero-grid{grid-template-columns:1fr;min-height:650px}
+      .hero:before{background:linear-gradient(90deg,rgba(10,12,13,.96),rgba(10,12,13,.72)),url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=65&fm=webp") center/cover}
+      .hero-grid>div:last-child{display:none}
+      .vehicle-grid{grid-template-columns:1fr 1fr}
+      .vehicle-grid .btn{width:100%;justify-content:center}
+      .category-grid,.product-grid{grid-template-columns:repeat(2,1fr)}
+      .split,.contact-grid,.category-large{grid-template-columns:1fr}
+      .category-large .card{grid-template-columns:1fr}
+      .category-large img{height:250px}
+      .stat-grid{grid-template-columns:repeat(2,1fr)}
+      .deal-grid,.testimonials,.brands{grid-template-columns:1fr 1fr}
+      .filters-layout{grid-template-columns:1fr}
+      .filters{display:none}
+      .mobile-filter{display:inline-flex}
+      .sort-row{gap:10px}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .auth{grid-template-columns:1fr}
+      .auth-media{display:none}
+      .auth-panel{padding:30px 20px}
+      .auth-inner{padding:15px 0}
+      .dash-sidebar{transform:translateX(-100%);transition:.4s var(--ease)}
+      .dash-sidebar.open{transform:none}
+      .dash-main{margin-left:0;padding:20px}
+      .mobile-dash-btn{display:block;background:var(--obsidian);color:#fff;border:0;padding:10px 12px}
+      .dash-top{gap:12px;align-items:start}
+      .dash-grid{grid-template-columns:1fr 1fr}
+      }
+    @media(max-width:600px){
+      .section{padding:65px 0}
+      .section-head{display:block}
+      .section-head .btn{margin-top:18px}
+      .hero h1{font-size:45px}
+      .hero p{font-size:15px}
+      .vehicle-grid,.category-grid,.product-grid,.deal-grid,.testimonials,.brands{grid-template-columns:1fr}
+      .product-img{height:230px}
+      .info-grid,.stat-grid,.footer-grid{grid-template-columns:1fr}
+      .cta-row{display:block}
+      .cta-row .btn{margin-top:18px}
+      .footer-bottom{display:block}
+      .footer-bottom span{display:block;margin-top:7px}
+      .auth-tabs{margin-bottom:20px}
+      .auth-panel{padding:25px 18px}
+      .auth-inner{width:100%}
+      .auth-social{grid-template-columns:1fr 1fr 1fr}
+      .dash-grid{grid-template-columns:1fr}
+      .dash-top{display:grid}
+      .user-chip{width:100%}
+      .timeline{grid-template-columns:1fr;gap:18px}
+      .timeline:before{display:none}
+      .step{display:flex;align-items:center;gap:12px;text-align:left}
+      .step span{margin:0}
+      }
+    @media(prefers-reduced-motion:reduce){
+      *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+      }
+    .nav-right{display:flex;align-items:center;gap:16px;justify-self:end}
+    @media(max-width:900px){
+      .nav-right{display:none!important}
+      }
+    .cart-btn{position:relative;background:none;border:0;color:#fff;font-size:19px;display:grid;place-items:center;width:36px;height:36px}
+    .cart-count{position:absolute;top:-3px;right:-6px;background:var(--red);color:#fff;font-size:10px;font-weight:800;min-width:17px;height:17px;border-radius:50%;display:none;align-items:center;justify-content:center;padding:0 3px;line-height:1}
+    .cart-count.show{display:flex}
+    .cart-panel{position:fixed;top:90px;right:24px;width:360px;max-width:92vw;background:#fff;color:var(--obsidian);box-shadow:var(--shadow);border:1px solid rgba(10,12,13,.08);z-index:2100;display:none;max-height:72vh;flex-direction:column}
+    .cart-panel.open{display:flex}
+    .cart-panel-head{padding:16px 18px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;font-weight:900;font-family:"Space Grotesk"}
+    .cart-panel-head button{background:none;border:0;font-size:18px;color:#888;cursor:pointer}
+    .cart-items{overflow-y:auto;padding:4px 0}
+    .cart-empty{padding:34px 18px;text-align:center;color:#8a9095;font-size:13px}
+    .cart-item{display:flex;gap:12px;padding:12px 18px;border-bottom:1px solid #f2f2f0;align-items:center}
+    .cart-item img{width:50px;height:50px;object-fit:contain;background:#f7f7f5;flex-shrink:0}
+    .cart-item-info{flex:1;min-width:0}
+    .cart-item-info h5{font-size:13px;margin-bottom:6px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .cart-item-row{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#555;gap:8px}
+    .cart-qty{display:flex;align-items:center;gap:7px}
+    .cart-qty button{width:20px;height:20px;border:1px solid #ddd;background:#fff;font-size:12px;display:grid;place-items:center;padding:0;cursor:pointer}
+    .cart-item-row>span:last-child{font-weight:800;color:var(--obsidian);white-space:nowrap}
+    .cart-remove{background:none;border:0;color:#c52e28;font-size:15px;cursor:pointer;flex-shrink:0}
+    .cart-panel-foot{padding:16px 18px;border-top:1px solid #eee}
+    .cart-total-row{display:flex;justify-content:space-between;font-weight:900;margin-bottom:12px}
+    .drawer-cart{display:flex;align-items:center;gap:10px;color:#d3d8da;font-weight:700;padding:15px;border-bottom:1px solid #24292c;background:none;border-left:0;border-right:0;border-top:0;width:100%;text-align:left;font-size:14px;cursor:pointer}
+    .drawer-cart .cart-count{position:static;margin-left:auto}
+    @media(max-width:600px){
+      .cart-panel{right:12px;left:12px;width:auto;top:78px}
+      }
+    
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="index.html"><img class="logo-img" src="./gallery/stackly-red.webp" alt="logo"></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="categories.html">Categories</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-right"><button class="cart-btn" id="cartToggle" aria-label="View cart"><i class="fas fa-cart-shopping"></i><span class="cart-count" id="cartCount">0</span></button><a class="btn nav-login" href="login.html">Login <i class="fas fa-arrow-right"></i></a></div><button class="menu-btn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-panel-head"><span>Your Cart</span><button id="cartClose" aria-label="Close cart"><i class="fas fa-xmark"></i></button></div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">Your cart is empty</div>
+    </div>
+    <div class="cart-panel-foot">
+      <div class="cart-total-row"><span>Total</span><span id="cartTotal">₹0</span></div><a class="btn dark" href="shop.html" style="width:100%;justify-content:center">Continue Shopping</a>
+    </div>
+  </div>
+  <aside class="mobile-drawer">
+    <div class="drawer-top"><a class="logo" href="index.html"><img class="logo-img" src="./gallery/stackly-red.webp" alt="logo"></a><button class="drawer-close" aria-label="Close menu"><i class="fas fa-xmark"></i></button></div>
+    <nav class="drawer-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="categories.html">Categories</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></nav><button class="drawer-cart" id="drawerCartToggle" type="button"><i class="fas fa-cart-shopping"></i> Cart <span class="cart-count" id="cartCountDrawer">0</span></button><a class="btn drawer-login" href="login.html">Login <i class="fas fa-arrow-right"></i></a>
+  </aside>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">About Auto Spare</div>
+        <h1>Parts that keep you moving.</h1>
+        <p>We are building a simpler, more trustworthy way to source automotive spare parts online.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container split reveal">
+        <div class="split-media"><img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1100&q=68&fm=webp" alt="Professional garage" loading="lazy"></div>
+        <div class="split-content">
+          <div class="eyebrow">Our Story</div>
+          <h2>Born from the workshop floor.</h2>
+          <p>Auto Spare Parts Store brings together genuine components, clear product information and a driver-first shopping experience. The goal is simple: make the right part easier to find.</p><a class="btn" href="404.html">Explore the store</a>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Our Mission</div>
+            <h2>Less guesswork. Better maintenance.</h2>
+          </div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat reveal"><strong>10K+</strong><span>Parts</span></div>
+          <div class="stat reveal"><strong>500+</strong><span>Brands</span></div>
+          <div class="stat reveal"><strong>25K+</strong><span>Customers</span></div>
+          <div class="stat reveal"><strong>98%</strong><span>Satisfaction</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container split reveal">
+        <div class="split-content">
+          <div class="eyebrow">Automotive Expertise</div>
+          <h2>Built around real vehicle needs.</h2>
+          <p>From braking and suspension to engine maintenance and wheels, our categories are organized around the systems drivers and technicians actually work with.</p>
+        </div>
+        <div class="split-media"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1100&q=68&fm=webp" alt="Automotive tools" loading="lazy"></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Genuine Parts Promise</div>
+            <h2>Quality before quantity.</h2>
+          </div>
+        </div>
+        <div class="category-grid">
+          <div class="card reveal" style="padding:28px"><i class="fas fa-shield-halved" style="font-size:25px;color:var(--red)"></i>
+            <h3 style="margin:16px 0 8px">Authenticity</h3>
+            <p class="muted">Clear brand information and product details.</p>
+          </div>
+          <div class="card reveal" style="padding:28px"><i class="fas fa-car-side" style="font-size:25px;color:var(--red)"></i>
+            <h3 style="margin:16px 0 8px">Vehicle fit</h3>
+            <p class="muted">Compatibility-first shopping guidance.</p>
+          </div>
+          <div class="card reveal" style="padding:28px"><i class="fas fa-box" style="font-size:25px;color:var(--red)"></i>
+            <h3 style="margin:16px 0 8px">Reliable delivery</h3>
+            <p class="muted">Order visibility from packing to doorstep.</p>
+          </div>
+          <div class="card reveal" style="padding:28px"><i class="fas fa-headset" style="font-size:25px;color:var(--red)"></i>
+            <h3 style="margin:16px 0 8px">Human support</h3>
+            <p class="muted">Help when you need to choose the right part.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container split reveal">
+        <div class="split-media"><img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1100&q=68&fm=webp" alt="Technician working on vehicle" loading="lazy"></div>
+        <div class="split-content">
+          <div class="eyebrow">Quality Process</div>
+          <h2>Every component deserves attention.</h2>
+          <p>We structure the catalog around recognizable brands, vehicle information and practical specifications so product discovery feels precise instead of overwhelming.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Why customers trust us</div>
+            <h2>Designed for confidence.</h2>
+          </div>
+        </div>
+        <div class="testimonials">
+          <article class="quote card reveal">
+            <div class="rating">★★★★★</div>
+            <p>“The category structure makes it much easier to find the right maintenance part.”</p>
+            <div class="person">Rohit M.<small>Verified buyer</small></div>
+          </article>
+          <article class="quote card reveal">
+            <div class="rating">★★★★★</div>
+            <p>“I like seeing fitment information before adding a part to the cart.”</p>
+            <div class="person">Priya S.<small>Verified buyer</small></div>
+          </article>
+          <article class="quote card reveal">
+            <div class="rating">★★★★★</div>
+            <p>“Fast, clean and much more focused than a general marketplace.”</p>
+            <div class="person">Arjun K.<small>Verified buyer</small></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="cta">
+      <div class="container cta-row">
+        <div>
+          <div class="eyebrow" style="color:#fff">Keep moving</div>
+          <h2>Choose the part. Own the drive.</h2>
+        </div><a class="btn" href="404.html">Talk to us</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><a class="logo" href="index.html"><img class="logo-img" src="./gallery/stackly-red.webp" alt="logo"style="margin-bottom:-20px;margin-top:-20px;margin-left:-15px;"></a>
+        <p>Premium automotive parts engineered for everyday reliability, performance and safer journeys.</p>
+        <div class="social"><a href="404.html"><i class="fab fa-facebook-f"></i></a><a href="404.html"><i class="fab fa-instagram"></i></a><a href="404.html"><i class="fab fa-x-twitter"></i></a><a href="404.html"><i class="fab fa-linkedin-in"></i></a></div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop Parts</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Auto Parts</h4>
+        <ul>
+          <li><a href="404.html">Brake Systems</a></li>
+          <li><a href="404.html">Engine Parts</a></li>
+          <li><a href="404.html">Filters</a></li>
+          <li><a href="404.html">Wheels & Tyres</a></li>
+          <li><a href="404.html">Electrical Parts</a></li>
+          
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>+91 98765 43210</li>
+          <li>stackly@autospare.in</li>
+          <li>Hyderabad, India</li>
+          <li>Mon–Sat · 9 AM–7 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 Stackly Auto Spare Parts Store</span><a href="404.html">Privacy Policy · Terms & Conditions</a></div>
+  </footer>
+  <script>
+    const CART_KEY = 'autospare_cart';
+
+    function getCart() {
+      try {
+        return JSON.parse(localStorage.getItem(CART_KEY)) || []
+      } catch (e) {
+        return []
+      }
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem(CART_KEY, JSON.stringify(cart))
+    }
+
+    function money(n) {
+      return '₹' + Number(n).toLocaleString('en-IN')
+    }
+
+    function updateCartBadge() {
+      const qty = getCart().reduce((n, i) => n + i.qty, 0);
+      document.querySelectorAll('.cart-count').forEach(el => {
+        el.textContent = qty;
+        el.classList.toggle('show', qty > 0)
+      });
+    }
+
+    function renderCartPanel() {
+      const cart = getCart();
+      const wrap = document.getElementById('cartItems');
+      const totalEl = document.getElementById('cartTotal');
+      if (!wrap) return;
+      if (!cart.length) {
+        wrap.innerHTML = '<div class="cart-empty">Your cart is empty</div>';
+        if (totalEl) totalEl.textContent = money(0);
+        return
+      }
+      wrap.innerHTML = cart.map((item, idx) => '<div class="cart-item" data-idx="' + idx + '"><img src="' + item.img + '" alt=""><div class="cart-item-info"><h5>' + item.name + '</h5><div class="cart-item-row"><div class="cart-qty"><button data-dec type="button">-</button><span>' + item.qty + '</span><button data-inc type="button">+</button></div><span>' + money(item.price * item.qty) + '</span></div></div><button class="cart-remove" data-remove type="button" aria-label="Remove"><i class="fas fa-xmark"></i></button></div>').join('');
+      const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+      if (totalEl) totalEl.textContent = money(total);
+    }
+
+    function addToCart(name, price, img) {
+      const cart = getCart();
+      const existing = cart.find(i => i.name === name);
+      if (existing) {
+        existing.qty += 1
+      } else {
+        cart.push({
+          name: name,
+          price: price,
+          img: img,
+          qty: 1
+        })
+      }
+      saveCart(cart);
+      updateCartBadge();
+      renderCartPanel();
+    }
+
+    function openCartPanel() {
+      document.getElementById('cartPanel')?.classList.add('open');
+      renderCartPanel()
+    }
+
+    function closeCartPanel() {
+      document.getElementById('cartPanel')?.classList.remove('open')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartBadge();
+      const toast = (msg) => {
+        let t = document.querySelector('.toast');
+        if (!t) {
+          t = document.createElement('div');
+          t.className = 'toast';
+          document.body.appendChild(t)
+        }
+        t.textContent = msg;
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 2600)
+      };
+      document.querySelectorAll('.menu-btn').forEach(b => b.addEventListener('click', () => document.querySelector('.mobile-drawer')?.classList.add('open')));
+      document.querySelectorAll('.drawer-close').forEach(b => b.addEventListener('click', () => document.querySelector('.mobile-drawer')?.classList.remove('open')));
+      document.querySelectorAll('.mobile-drawer a').forEach(a => a.addEventListener('click', () => document.querySelector('.mobile-drawer')?.classList.remove('open')));
+      document.querySelectorAll('.reveal').forEach(el => {
+        const io = new IntersectionObserver(es => es.forEach(e => {
+          if (e.isIntersecting) e.target.classList.add('show')
+        }), {
+          threshold: .08
+        });
+        io.observe(el)
+      });
+
+      document.querySelectorAll('[data-cart]').forEach(b => b.addEventListener('click', () => {
+        const card = b.closest('.card') || b.closest('article');
+        const name = (card?.querySelector('h3')?.textContent || 'Product').trim();
+        const priceEl = card?.querySelector('.price');
+        let priceText = '0';
+        if (priceEl) {
+          priceText = Array.from(priceEl.childNodes).filter(n => n.nodeType === 3).map(n => n.textContent).join('').trim()
+        }
+        const price = parseInt(priceText.replace(/[^0-9]/g, '')) || 0;
+        const img = card?.querySelector('.product-img img')?.getAttribute('src') || '';
+        addToCart(name, price, img);
+        toast('Added to cart');
+      }));
+      document.getElementById('cartToggle')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.getElementById('cartPanel')?.classList.toggle('open');
+        renderCartPanel()
+      });
+      document.getElementById('drawerCartToggle')?.addEventListener('click', () => {
+        document.querySelector('.mobile-drawer')?.classList.remove('open');
+        openCartPanel()
+      });
+      document.getElementById('cartClose')?.addEventListener('click', closeCartPanel);
+      document.addEventListener('click', (e) => {
+        const panel = document.getElementById('cartPanel');
+        if (panel && panel.classList.contains('open') && !panel.contains(e.target) && !e.target.closest('#cartToggle') && !e.target.closest('#drawerCartToggle')) {
+          closeCartPanel()
+        }
+      });
+      document.getElementById('cartItems')?.addEventListener('click', (e) => {
+        const itemEl = e.target.closest('.cart-item');
+        if (!itemEl) return;
+        const idx = +itemEl.dataset.idx;
+        const cart = getCart();
+        if (e.target.closest('[data-inc]')) {
+          cart[idx].qty += 1
+        } else if (e.target.closest('[data-dec]')) {
+          cart[idx].qty -= 1;
+          if (cart[idx].qty <= 0) cart.splice(idx, 1)
+        } else if (e.target.closest('[data-remove]')) {
+          cart.splice(idx, 1)
+        } else return;
+        saveCart(cart);
+        updateCartBadge();
+        renderCartPanel();
+      });
+      document.querySelectorAll('[data-wish]').forEach(b => b.addEventListener('click', () => {
+        b.innerHTML = b.innerHTML.includes('far') ? '<i class="fas fa-heart"></i>' : '<i class="far fa-heart"></i>';
+        toast('Wishlist updated')
+      }));
+      document.querySelectorAll('[data-track]').forEach(b => b.addEventListener('click', () => {
+        let v = document.querySelector('#orderId')?.value.trim();
+        toast(v ? 'Tracking ' + v : 'Enter an order ID first')
+      }));
+      document.querySelectorAll('[data-back]').forEach(b => b.addEventListener('click', () => history.back()));
+    });
+    document.querySelectorAll('.nav-links a,.drawer-links a').forEach(a => {
+      if (a.getAttribute('href') === 'about.html') a.classList.add('active')
+    });
+  </script>
+</body>
+
+</html>
