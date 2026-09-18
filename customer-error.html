@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>About Auto Spare Parts Store</title>
+  <title>404 · Auto Spare</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -12,14 +12,14 @@
   <style>
 :root{--obsidian:#0A0C0D;--carbon:#111416;--graphite:#1A1D20;--surface:#F1F0EB;--ivory:#FAF9F5;--red:#E33B32;--orange:#F47A38;--steel:#8B9297;--muted:#62696D;--gold:#C9A45C;--line:rgba(255,255,255,.10);--shadow:0 22px 60px rgba(0,0,0,.16);--ease:cubic-bezier(.2,.75,.2,1)}
     *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;overflow-x:hidden}
+    html{scroll-behavior:smooth}
     body{font-family:Inter,Arial,sans-serif;background:var(--surface);color:var(--obsidian);overflow-x:hidden;line-height:1.55}
     img{display:block;max-width:100%}
     a{text-decoration:none;color:inherit}
     button,input,select,textarea{font:inherit}
     button{cursor:pointer}
     .container{width:min(1180px,92%);margin:auto}
-    .section{padding:40px 0}
+    .section{padding:92px 0}
     .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}
     .eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:800;margin-bottom:10px}
     h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.04}
@@ -33,21 +33,9 @@
     .glass{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
     .card{background:#fff;border:1px solid rgba(10,12,13,.08);transition:.35s var(--ease);position:relative;overflow:hidden}
     .card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:rgba(227,59,50,.28)}
-.site-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
-  background:rgba(10,12,13,.92);
-  color:#fff;
-  border-bottom:1px solid var(--line);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-}
-    .nav{height:90px;display:grid;grid-template-columns:190px 1fr auto;align-items:center;gap:20px}
+    .site-header{position:sticky;top:0;z-index:1000;background:rgba(10,12,13,.92);color:#fff;border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
+    .nav{height:76px;display:grid;grid-template-columns:190px 1fr 150px;align-items:center;gap:20px}
     .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.7px}
-    .logo-img{height:100px;width:auto;display:block;object-fit:contain}
     .logo-mark{width:32px;height:32px;background:var(--red);display:grid;place-items:center;transform:skew(-10deg);color:#fff}
     .logo span:last-child{color:#fff}
     .logo em{font-style:normal;color:var(--red)}
@@ -58,7 +46,7 @@
     .nav-login{justify-self:end}
     .menu-btn{display:none;background:none;border:0;color:#fff;font-size:24px}
     .mobile-drawer{display:none}
-    .hero{background:var(--obsidian);color:#fff;min-height:680px;position:relative;overflow:hidden;padding-top:50px;}
+    .hero{background:var(--obsidian);color:#fff;min-height:680px;position:relative;overflow:hidden}
     .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(10,12,13,.98) 18%,rgba(10,12,13,.76) 53%,rgba(10,12,13,.18)),url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=70&fm=webp") center/cover}
     .hero .container{position:relative;z-index:1}
     .hero-grid{min-height:680px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px}
@@ -146,7 +134,7 @@
     .social a{width:36px;height:36px;border:1px solid #353b3f;display:grid;place-items:center;transition:.25s}
     .social a:hover{background:var(--red);border-color:var(--red);transform:translateY(-3px)}
     .footer-bottom{border-top:1px solid #262b2e;margin-top:45px;padding-top:18px;display:flex;justify-content:space-between;color:#737b7f;font-size:11px}
-    .page-hero{background:var(--obsidian);color:#fff;padding:120px 0}
+    .page-hero{background:var(--obsidian);color:#fff;padding:90px 0}
     .page-hero h1{font-size:clamp(42px,6vw,74px)}
     .page-hero p{max-width:650px;color:#aeb5b9;margin-top:18px}
     .filters-layout{display:grid;grid-template-columns:240px 1fr;gap:28px}
@@ -227,7 +215,7 @@
       }
     @media(max-width:900px){
       .nav{grid-template-columns:1fr auto;height:68px}
-      .nav-links,.nav-login,.nav-right{display:none}
+      .nav-links,.nav-login{display:none}
       .menu-btn{display:block}
       .mobile-drawer{position:fixed;inset:0 0 0 auto;width:min(360px,88%);background:var(--obsidian);z-index:1200;padding:24px;transform:translateX(100%);transition:.4s var(--ease);display:block;border-left:1px solid #292e31}
       .mobile-drawer.open{transform:none}
@@ -291,382 +279,22 @@
     @media(prefers-reduced-motion:reduce){
       *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
       }
-    .nav-right{display:flex;align-items:center;gap:16px;justify-self:end}
-    @media(max-width:900px){
-      .nav-right{display:none!important}
-      }
-    .cart-btn{position:relative;background:none;border:0;color:#fff;font-size:19px;display:grid;place-items:center;width:36px;height:36px}
-    .cart-count{position:absolute;top:-3px;right:-6px;background:var(--red);color:#fff;font-size:10px;font-weight:800;min-width:17px;height:17px;border-radius:50%;display:none;align-items:center;justify-content:center;padding:0 3px;line-height:1}
-    .cart-count.show{display:flex}
-    .cart-panel{position:fixed;top:90px;right:24px;width:360px;max-width:92vw;background:#fff;color:var(--obsidian);box-shadow:var(--shadow);border:1px solid rgba(10,12,13,.08);z-index:2100;display:none;max-height:72vh;flex-direction:column}
-    .cart-panel.open{display:flex}
-    .cart-panel-head{padding:16px 18px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;font-weight:900;font-family:"Space Grotesk"}
-    .cart-panel-head button{background:none;border:0;font-size:18px;color:#888;cursor:pointer}
-    .cart-items{overflow-y:auto;padding:4px 0}
-    .cart-empty{padding:34px 18px;text-align:center;color:#8a9095;font-size:13px}
-    .cart-item{display:flex;gap:12px;padding:12px 18px;border-bottom:1px solid #f2f2f0;align-items:center}
-    .cart-item img{width:50px;height:50px;object-fit:contain;background:#f7f7f5;flex-shrink:0}
-    .cart-item-info{flex:1;min-width:0}
-    .cart-item-info h5{font-size:13px;margin-bottom:6px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-    .cart-item-row{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#555;gap:8px}
-    .cart-qty{display:flex;align-items:center;gap:7px}
-    .cart-qty button{width:20px;height:20px;border:1px solid #ddd;background:#fff;font-size:12px;display:grid;place-items:center;padding:0;cursor:pointer}
-    .cart-item-row>span:last-child{font-weight:800;color:var(--obsidian);white-space:nowrap}
-    .cart-remove{background:none;border:0;color:#c52e28;font-size:15px;cursor:pointer;flex-shrink:0}
-    .cart-panel-foot{padding:16px 18px;border-top:1px solid #eee}
-    .cart-total-row{display:flex;justify-content:space-between;font-weight:900;margin-bottom:12px}
-    .drawer-cart{display:flex;align-items:center;gap:10px;color:#d3d8da;font-weight:700;padding:15px;border-bottom:1px solid #24292c;background:none;border-left:0;border-right:0;border-top:0;width:100%;text-align:left;font-size:14px;cursor:pointer}
-    .drawer-cart .cart-count{position:static;margin-left:auto}
-    @media(max-width:600px){
-      .cart-panel{right:12px;left:12px;width:auto;top:78px}
-      }
-
-      /* Premium Quick Links Hover */
-.site-footer ul li a{
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  gap:0;
-  color:rgba(255,255,255,.62);
-  text-decoration:none;
-  transition:
-    color .35s cubic-bezier(.22,1,.36,1),
-    transform .35s cubic-bezier(.22,1,.36,1),
-    letter-spacing .35s ease;
-}
-
-/* Small premium arrow */
-.site-footer ul li a::before{
-  content:"↗";
-  font-size:11px;
-  opacity:0;
-  width:0;
-  transform:translateX(-8px);
-  transition:
-    opacity .3s ease,
-    width .3s ease,
-    transform .35s cubic-bezier(.22,1,.36,1);
-}
-
-/* Elegant underline */
-.site-footer ul li a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:0;
-  height:1px;
-  background:linear-gradient(
-    90deg,
-    var(--amber),
-    rgba(255,255,255,.15)
-  );
-  box-shadow:0 0 8px rgba(245,185,66,.35);
-  transition:width .45s cubic-bezier(.22,1,.36,1);
-}
-
-.site-footer ul li a:hover{
-  color:var(--red);
-  transform:translateX(4px);
-  letter-spacing:.3px;
-}
-
-.site-footer ul li a:hover::before{
-  opacity:1;
-  width:17px;
-  transform:translateX(0);
-}
-
-.site-footer ul li a:hover::after{
-  width:100%;
-}
-
-/* Premium Contact Hover */
-.footer-contact ul li {
-  position: relative;
-  width: fit-content;
-  margin-bottom: 10px;
-  color: rgba(255, 255, 255, 0.65);
-  cursor: default;
-  transition: color 0.3s ease, transform 0.3s ease;
-  padding-left: 0;
-}
-
-.footer-contact ul li::before {
-  content: "";
-  position: absolute;
-  left: -14px;
-  top: 50%;
-  width: 0;
-  height: 1px;
-  background: var(--amber);
-  transform: translateY(-50%);
-  transition: width 0.3s ease;
-}
-
-.footer-contact ul li:hover {
-  color: var(--red);
-  transform: translateX(12px);
-}
-
-.footer-contact ul li:hover::before {
-  width: 8px;
-}
     
   </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="logo" href="index.html"><img class="logo-img" src="./gallery/stackly-red.webp" alt="logo"></a>
-      <nav class="nav-links">
-        <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="categories.html">Categories</a><a href="about.html">About Us</a><a href="contact.html">Contact</a>
-      </nav>
-      <div class="nav-right"><button class="cart-btn" id="cartToggle" aria-label="View cart"><i class="fas fa-cart-shopping"></i><span class="cart-count" id="cartCount">0</span></button><a class="btn nav-login" href="login.html">Login <i class="fas fa-arrow-right"></i></a></div><button class="menu-btn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+  <main class="notfound">
+    <div>
+      <div class="eyebrow" style="color:#fff">Auto Spare Parts Store</div>
+      <h1>404</h1>
+      <h2>Road block ahead.</h2>
+      <p>The page you're looking for has taken a wrong turn. Let's get you back on the road.</p>
+      <div class="hero-actions" style="justify-content:center"><a class="btn" href="customer-dashboard.html"><i class="fas fa-house"></i> Go to Dashboard</a><button class="btn ghost" data-back><i class="fas fa-arrow-left"></i> Go Back</button></div>
     </div>
-  </header>
-  <div class="cart-panel" id="cartPanel">
-    <div class="cart-panel-head"><span>Your Cart</span><button id="cartClose" aria-label="Close cart"><i class="fas fa-xmark"></i></button></div>
-    <div class="cart-items" id="cartItems">
-      <div class="cart-empty">Your cart is empty</div>
-    </div>
-    <div class="cart-panel-foot">
-      <div class="cart-total-row"><span>Total</span><span id="cartTotal">₹0</span></div><a class="btn dark" href="shop.html" style="width:100%;justify-content:center">Continue Shopping</a>
-    </div>
-  </div>
-  <aside class="mobile-drawer">
-    <div class="drawer-top"><a class="logo" href="index.html"><img class="logo-img" src="./gallery/stackly-red.webp" alt="logo"></a><button class="drawer-close" aria-label="Close menu"><i class="fas fa-xmark"></i></button></div>
-    <nav class="drawer-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="categories.html">Categories</a><a href="about.html">About Us</a><a href="contact.html">Contact</a></nav><button class="drawer-cart" id="drawerCartToggle" type="button"><i class="fas fa-cart-shopping"></i> Cart <span class="cart-count" id="cartCountDrawer">0</span></button><a class="btn drawer-login" href="login.html">Login <i class="fas fa-arrow-right"></i></a>
-  </aside>
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <div class="eyebrow">About Auto Spare</div>
-        <h1>Parts that keep you moving.</h1>
-        <p>We are building a simpler, more trustworthy way to source automotive spare parts online.</p>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container split reveal">
-        <div class="split-media"><img src="./gallery/home-page-6.webp" alt="Professional garage" loading="lazy"></div>
-        <div class="split-content">
-          <div class="eyebrow">Our Story</div>
-          <h2>Born from the workshop floor.</h2>
-          <p>Auto Spare Parts Store brings together genuine components, clear product information and a driver-first shopping experience. The goal is simple: make the right part easier to find.</p><a class="btn" href="404.html">Explore the store</a>
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">Our Mission</div>
-            <h2>Less guesswork. Better maintenance.</h2>
-          </div>
-        </div>
-        <div class="stat-grid">
-          <div class="stat reveal"><strong>10K+</strong><span>Parts</span></div>
-          <div class="stat reveal"><strong>500+</strong><span>Brands</span></div>
-          <div class="stat reveal"><strong>25K+</strong><span>Customers</span></div>
-          <div class="stat reveal"><strong>98%</strong><span>Satisfaction</span></div>
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container split reveal">
-        <div class="split-content">
-          <div class="eyebrow">Automotive Expertise</div>
-          <h2>Built around real vehicle needs.</h2>
-          <p>From braking and suspension to engine maintenance and wheels, our categories are organized around the systems drivers and technicians actually work with.</p>
-        </div>
-        <div class="split-media"><img src="./gallery/home-page-5.webp" alt="Automotive tools" loading="lazy"></div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">Genuine Parts Promise</div>
-            <h2>Quality before quantity.</h2>
-          </div>
-        </div>
-        <div class="category-grid">
-          <div class="card reveal" style="padding:28px"><i class="fas fa-shield-halved" style="font-size:25px;color:var(--red)"></i>
-            <h3 style="margin:16px 0 8px">Authenticity</h3>
-            <p class="muted">Clear brand information and product details.</p>
-          </div>
-          <div class="card reveal" style="padding:28px"><i class="fas fa-car-side" style="font-size:25px;color:var(--red)"></i>
-            <h3 style="margin:16px 0 8px">Vehicle fit</h3>
-            <p class="muted">Compatibility-first shopping guidance.</p>
-          </div>
-          <div class="card reveal" style="padding:28px"><i class="fas fa-box" style="font-size:25px;color:var(--red)"></i>
-            <h3 style="margin:16px 0 8px">Reliable delivery</h3>
-            <p class="muted">Order visibility from packing to doorstep.</p>
-          </div>
-          <div class="card reveal" style="padding:28px"><i class="fas fa-headset" style="font-size:25px;color:var(--red)"></i>
-            <h3 style="margin:16px 0 8px">Human support</h3>
-            <p class="muted">Help when you need to choose the right part.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container split reveal">
-        <div class="split-media"><img src="./gallery/about-page-1.webp" alt="Technician working on vehicle" loading="lazy"></div>
-        <div class="split-content">
-          <div class="eyebrow">Quality Process</div>
-          <h2>Every component deserves attention.</h2>
-          <p>We structure the catalog around recognizable brands, vehicle information and practical specifications so product discovery feels precise instead of overwhelming.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">Why customers trust us</div>
-            <h2>Designed for confidence.</h2>
-          </div>
-        </div>
-        <div class="testimonials">
-          <article class="quote card reveal">
-            <div class="rating">★★★★★</div>
-            <p>“The category structure makes it much easier to find the right maintenance part.”</p>
-            <div class="person">Rohit M.<small>Verified buyer</small></div>
-          </article>
-          <article class="quote card reveal">
-            <div class="rating">★★★★★</div>
-            <p>“I like seeing fitment information before adding a part to the cart.”</p>
-            <div class="person">Priya S.<small>Verified buyer</small></div>
-          </article>
-          <article class="quote card reveal">
-            <div class="rating">★★★★★</div>
-            <p>“Fast, clean and much more focused than a general marketplace.”</p>
-            <div class="person">Arjun K.<small>Verified buyer</small></div>
-          </article>
-        </div>
-      </div>
-    </section>
-    <section class="cta">
-      <div class="container cta-row">
-        <div>
-          <div class="eyebrow" style="color:#fff">Keep moving</div>
-          <h2>Choose the part. Own the drive.</h2>
-        </div><a class="btn" href="404.html">Talk to us</a>
-      </div>
-    </section>
   </main>
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div><a class="logo" href="index.html"><img class="logo-img" src="./gallery/stackly-red.webp" alt="logo"style="margin-bottom:-20px;margin-top:-20px;margin-left:-15px;"></a>
-        <p>Premium automotive parts engineered for everyday reliability, performance and safer journeys.</p>
-        <div class="social"><a href="404.html"><i class="fab fa-facebook-f"></i></a><a href="404.html"><i class="fab fa-instagram"></i></a><a href="404.html"><i class="fab fa-x-twitter"></i></a><a href="404.html"><i class="fab fa-linkedin-in"></i></a></div>
-      </div>
-      <div>
-        <h4 style="color:whitesmoke; text-transform: uppercase;">Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="shop.html">Shop Parts</a></li>
-          <li><a href="categories.html">Categories</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 style="color:whitesmoke; text-transform: uppercase;">Auto Parts</h4>
-        <ul>
-          <li><a href="404.html">Brake Systems</a></li>
-          <li><a href="404.html">Engine Parts</a></li>
-          <li><a href="404.html">Filters</a></li>
-          <li><a href="404.html">Wheels & Tyres</a></li>
-          <li><a href="404.html">Electrical Parts</a></li>
-          
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h4 style="color:whitesmoke; text-transform: uppercase;">Contact</h4>
-        <ul>
-          <li>+91 98765 43210</li>
-          <li>stackly@autospare.in</li>
-          <li>Hyderabad, India</li>
-          <li>Mon–Sat · 9 AM–7 PM</li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom"><span>© 2026 Stackly Auto Spare Parts Store</span><a href="404.html">Privacy Policy · Terms & Conditions</a></div>
-  </footer>
   <script>
-    const CART_KEY = 'autospare_cart';
-
-    function getCart() {
-      try {
-        return JSON.parse(localStorage.getItem(CART_KEY)) || []
-      } catch (e) {
-        return []
-      }
-    }
-
-    function saveCart(cart) {
-      localStorage.setItem(CART_KEY, JSON.stringify(cart))
-    }
-
-    function money(n) {
-      return '₹' + Number(n).toLocaleString('en-IN')
-    }
-
-    function updateCartBadge() {
-      const qty = getCart().reduce((n, i) => n + i.qty, 0);
-      document.querySelectorAll('.cart-count').forEach(el => {
-        el.textContent = qty;
-        el.classList.toggle('show', qty > 0)
-      });
-    }
-
-    function renderCartPanel() {
-      const cart = getCart();
-      const wrap = document.getElementById('cartItems');
-      const totalEl = document.getElementById('cartTotal');
-      if (!wrap) return;
-      if (!cart.length) {
-        wrap.innerHTML = '<div class="cart-empty">Your cart is empty</div>';
-        if (totalEl) totalEl.textContent = money(0);
-        return
-      }
-      wrap.innerHTML = cart.map((item, idx) => '<div class="cart-item" data-idx="' + idx + '"><img src="' + item.img + '" alt=""><div class="cart-item-info"><h5>' + item.name + '</h5><div class="cart-item-row"><div class="cart-qty"><button data-dec type="button">-</button><span>' + item.qty + '</span><button data-inc type="button">+</button></div><span>' + money(item.price * item.qty) + '</span></div></div><button class="cart-remove" data-remove type="button" aria-label="Remove"><i class="fas fa-xmark"></i></button></div>').join('');
-      const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
-      if (totalEl) totalEl.textContent = money(total);
-    }
-
-    function addToCart(name, price, img) {
-      const cart = getCart();
-      const existing = cart.find(i => i.name === name);
-      if (existing) {
-        existing.qty += 1
-      } else {
-        cart.push({
-          name: name,
-          price: price,
-          img: img,
-          qty: 1
-        })
-      }
-      saveCart(cart);
-      updateCartBadge();
-      renderCartPanel();
-    }
-
-    function openCartPanel() {
-      document.getElementById('cartPanel')?.classList.add('open');
-      renderCartPanel()
-    }
-
-    function closeCartPanel() {
-      document.getElementById('cartPanel')?.classList.remove('open')
-    }
-
     document.addEventListener('DOMContentLoaded', () => {
-      updateCartBadge();
       const toast = (msg) => {
         let t = document.querySelector('.toast');
         if (!t) {
@@ -689,53 +317,7 @@
         });
         io.observe(el)
       });
-
-      document.querySelectorAll('[data-cart]').forEach(b => b.addEventListener('click', () => {
-        const card = b.closest('.card') || b.closest('article');
-        const name = (card?.querySelector('h3')?.textContent || 'Product').trim();
-        const priceEl = card?.querySelector('.price');
-        let priceText = '0';
-        if (priceEl) {
-          priceText = Array.from(priceEl.childNodes).filter(n => n.nodeType === 3).map(n => n.textContent).join('').trim()
-        }
-        const price = parseInt(priceText.replace(/[^0-9]/g, '')) || 0;
-        const img = card?.querySelector('.product-img img')?.getAttribute('src') || '';
-        addToCart(name, price, img);
-        toast('Added to cart');
-      }));
-      document.getElementById('cartToggle')?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        document.getElementById('cartPanel')?.classList.toggle('open');
-        renderCartPanel()
-      });
-      document.getElementById('drawerCartToggle')?.addEventListener('click', () => {
-        document.querySelector('.mobile-drawer')?.classList.remove('open');
-        openCartPanel()
-      });
-      document.getElementById('cartClose')?.addEventListener('click', closeCartPanel);
-      document.addEventListener('click', (e) => {
-        const panel = document.getElementById('cartPanel');
-        if (panel && panel.classList.contains('open') && !panel.contains(e.target) && !e.target.closest('#cartToggle') && !e.target.closest('#drawerCartToggle')) {
-          closeCartPanel()
-        }
-      });
-      document.getElementById('cartItems')?.addEventListener('click', (e) => {
-        const itemEl = e.target.closest('.cart-item');
-        if (!itemEl) return;
-        const idx = +itemEl.dataset.idx;
-        const cart = getCart();
-        if (e.target.closest('[data-inc]')) {
-          cart[idx].qty += 1
-        } else if (e.target.closest('[data-dec]')) {
-          cart[idx].qty -= 1;
-          if (cart[idx].qty <= 0) cart.splice(idx, 1)
-        } else if (e.target.closest('[data-remove]')) {
-          cart.splice(idx, 1)
-        } else return;
-        saveCart(cart);
-        updateCartBadge();
-        renderCartPanel();
-      });
+      document.querySelectorAll('[data-cart]').forEach(b => b.addEventListener('click', () => toast('Added to cart')));
       document.querySelectorAll('[data-wish]').forEach(b => b.addEventListener('click', () => {
         b.innerHTML = b.innerHTML.includes('far') ? '<i class="fas fa-heart"></i>' : '<i class="far fa-heart"></i>';
         toast('Wishlist updated')
@@ -745,9 +327,6 @@
         toast(v ? 'Tracking ' + v : 'Enter an order ID first')
       }));
       document.querySelectorAll('[data-back]').forEach(b => b.addEventListener('click', () => history.back()));
-    });
-    document.querySelectorAll('.nav-links a,.drawer-links a').forEach(a => {
-      if (a.getAttribute('href') === 'about.html') a.classList.add('active')
     });
   </script>
 </body>

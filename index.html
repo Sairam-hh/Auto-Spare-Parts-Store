@@ -90,7 +90,34 @@
     .product-img img{width:100%;height:100%;object-fit:contain;transition:.5s var(--ease)}
     .card:hover .product-img img{transform:scale(1.07)}
     .badge{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;padding:5px 8px;font-size:10px;font-weight:900}
-    .heart{position:absolute;top:10px;right:10px;width:32px;height:32px;border:1px solid #ddd;background:#fff;display:grid;place-items:center}
+.heart{
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:36px;
+  height:36px;
+  border:1px solid #ddd;
+  background:#fff;
+  color:var(--obsidian);
+  display:grid;
+  place-items:center;
+  z-index:10;
+  cursor:pointer;
+  transition:
+    transform .3s var(--ease),
+    background .3s ease,
+    color .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.heart:hover{
+  background:var(--red);
+  color:#fff;
+  border-color:var(--red);
+  transform:translateY(-2px) scale(1.05);
+  box-shadow:0 8px 20px rgba(227,59,50,.25);
+}
     .product-info{padding:17px}
     .brand{font-size:10px;letter-spacing:1.5px;font-weight:900;color:var(--steel)}
     .product-info h3{font-size:16px;margin:6px 0 8px}
@@ -238,7 +265,7 @@
       .drawer-links a{padding:15px;border-bottom:1px solid #24292c;color:#d3d8da}
       .drawer-login{margin-top:25px;width:100%;justify-content:center}
       .hero-grid{grid-template-columns:1fr;min-height:650px}
-      .hero:before{background:linear-gradient(90deg,rgba(10,12,13,.96),rgba(10,12,13,.72)),url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=65&fm=webp") center/cover}
+      .hero:before{background:linear-gradient(90deg,rgba(10,12,13,.96),rgba(10,12,13,.72)),url("/gallery/categories-page-7.webp") center/cover}
       .hero-grid>div:last-child{display:none}
       .vehicle-grid{grid-template-columns:1fr 1fr}
       .vehicle-grid .btn{width:100%;justify-content:center}
@@ -427,6 +454,93 @@
 .footer-contact ul li:hover::before {
   width: 8px;
 }
+
+/* Premium Float Card Hover */
+.float-card{
+  position:absolute;
+  padding:16px 20px;
+  right:4%;
+  bottom:15%;
+  color:#fff;
+  min-width:180px;
+  border:1px solid rgba(255,255,255,.16);
+  transition:
+    transform .4s var(--ease),
+    border-color .4s ease,
+    box-shadow .4s ease,
+    background .4s ease;
+  overflow:hidden;
+  cursor:default;
+}
+
+/* Shine effect */
+.float-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:70%;
+  height:100%;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.16),
+    transparent
+  );
+  transform:skewX(-20deg);
+  transition:left .6s ease;
+}
+
+/* Small red accent */
+.float-card::after{
+  content:"";
+  position:absolute;
+  left:0;
+  top:15px;
+  bottom:15px;
+  width:2px;
+  background:var(--red);
+  box-shadow:0 0 12px rgba(227,59,50,.6);
+  transition:.3s ease;
+}
+
+.float-card:hover{
+  transform:translateY(-9px);
+  background:rgba(255,255,255,.13);
+  border-color:rgba(227,59,50,.45);
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.35),
+    0 0 25px rgba(227,59,50,.12);
+}
+
+.float-card:hover::before{
+  left:140%;
+}
+
+.float-card:hover::after{
+  width:4px;
+}
+
+.float-card strong{
+  display:block;
+  font-size:24px;
+  font-family:"Space Grotesk",sans-serif;
+  transition:.3s ease;
+}
+
+.float-card small{
+  color:#b8bec2;
+  transition:.3s ease;
+}
+
+.float-card:hover strong{
+  color:var(--red);
+  transform:translateX(3px);
+}
+
+.float-card:hover small{
+  color:#fff;
+}
   </style>
 </head>
 
@@ -502,7 +616,7 @@
                 <option>Petrol</option>
                 <option>Diesel</option>
                 <option>Hybrid</option>
-              </select></div><a class="btn" href="shop.html" style="align-self:end;justify-content:center">Search Now</a>
+              </select></div><a class="btn" href="404.html" style="align-self:end;justify-content:center">Search Now</a>
           </div>
         </div>
       </div>
@@ -513,25 +627,25 @@
           <div>
             <div class="eyebrow">02 — Explore</div>
             <h2>Parts by category.</h2>
-          </div><a class="btn ghost" href="categories.html">View all <i class="fas fa-arrow-right"></i></a>
+          </div><a class="btn ghost" href="404.html">View all <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="category-grid">
-          <a class="category-card card reveal" href="shop.html"><img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=700&q=68&fm=webp" alt="Brake Systems" loading="lazy">
+          <a class="category-card card reveal" ><img src="./gallery/home-page-2.webp" alt="Brake Systems" loading="lazy">
             <div class="category-body">
               <h3>Brake Systems</h3>
               <p>Pads, rotors & kits</p>
             </div>
-          </a><a class="category-card card reveal" href="shop.html"><img src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&w=700&q=68&fm=webp" alt="Engine Parts" loading="lazy">
+          </a><a class="category-card card reveal" ><img src="./gallery/home-page-3.webp" alt="Engine Parts" loading="lazy">
             <div class="category-body">
               <h3>Engine Parts</h3>
               <p>Filters, plugs & belts</p>
             </div>
-          </a><a class="category-card card reveal" href="shop.html"><img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=700&q=68&fm=webp" alt="Wheels & Tyres" loading="lazy">
+          </a><a class="category-card card reveal" ><img src="./gallery/home-page-4.webp" alt="Wheels & Tyres" loading="lazy">
             <div class="category-body">
               <h3>Wheels & Tyres</h3>
               <p>Road-ready fitment</p>
             </div>
-          </a><a class="category-card card reveal" href="shop.html"><img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=700&q=68&fm=webp" alt="Tools & Equipment" loading="lazy">
+          </a><a class="category-card card reveal" ><img src="./gallery/home-page-5.webp" alt="Tools & Equipment" loading="lazy">
             <div class="category-body">
               <h3>Tools & Equipment</h3>
               <p>Workshop essentials</p>
@@ -546,11 +660,11 @@
           <div>
             <div class="eyebrow">03 — Curated</div>
             <h2>Featured products.</h2>
-          </div><a class="btn ghost" href="shop.html">Shop all</a>
+          </div><a class="btn ghost" href="404.html">Shop all</a>
         </div>
         <div class="product-grid">
           <article class="card reveal">
-            <div class="product-img"><span class="badge">-22%</span><button class="heart" data-wish><i class="far fa-heart"></i></button><img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=700&q=68&fm=webp" alt="Performance Brake Rotor" loading="lazy"></div>
+            <div class="product-img"><span class="badge">-22%</span><button class="heart" data-wish><i class="far fa-heart"></i></button><img src="./gallery/home-page-2.webp" alt="Performance Brake Rotor" loading="lazy"></div>
             <div class="product-info"><span class="brand">BREMBO</span>
               <h3>Performance Brake Rotor</h3>
               <div class="rating">★★★★★ <span style="color:#777"> · 48 reviews</span></div>
@@ -559,7 +673,7 @@
             </div>
           </article>
           <article class="card reveal">
-            <div class="product-img"><span class="badge">-12%</span><button class="heart" data-wish><i class="far fa-heart"></i></button><img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=700&q=68&fm=webp" alt="Road Performance Tyre" loading="lazy"></div>
+            <div class="product-img"><span class="badge">-12%</span><button class="heart" data-wish><i class="far fa-heart"></i></button><img src="./gallery/home-page-4.webp" alt="Road Performance Tyre" loading="lazy"></div>
             <div class="product-info"><span class="brand">MICHELIN</span>
               <h3>Road Performance Tyre</h3>
               <div class="rating">★★★★★ <span style="color:#777"> · 36 reviews</span></div>
@@ -568,7 +682,7 @@
             </div>
           </article>
           <article class="card reveal">
-            <div class="product-img"><span class="badge">-18%</span><button class="heart" data-wish><i class="far fa-heart"></i></button><img src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&w=700&q=68&fm=webp" alt="Premium Air Filter" loading="lazy"></div>
+            <div class="product-img"><span class="badge">-18%</span><button class="heart" data-wish><i class="far fa-heart"></i></button><img src="./gallery/home-page-3.webp" alt="Premium Air Filter" loading="lazy"></div>
             <div class="product-info"><span class="brand">BOSCH</span>
               <h3>Premium Air Filter</h3>
               <div class="rating">★★★★★ <span style="color:#777"> · 52 reviews</span></div>
@@ -577,7 +691,7 @@
             </div>
           </article>
           <article class="card reveal">
-            <div class="product-img"><span class="badge">-15%</span><button class="heart" data-wish><i class="far fa-heart"></i></button><img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=700&q=68&fm=webp" alt="Wheel Bearing Kit" loading="lazy"></div>
+            <div class="product-img"><span class="badge">-15%</span><button class="heart" data-wish><i class="far fa-heart"></i></button><img src="./gallery/home-page-6.webp" alt="Wheel Bearing Kit" loading="lazy"></div>
             <div class="product-info"><span class="brand">SKF</span>
               <h3>Wheel Bearing Kit</h3>
               <div class="rating">★★★★★ <span style="color:#777"> · 29 reviews</span></div>
@@ -590,7 +704,7 @@
     </section>
     <section class="section">
       <div class="container split reveal">
-        <div class="split-media"><img src="https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1100&q=68&fm=webp" alt="Automotive technician" loading="lazy"></div>
+        <div class="split-media"><img src="./gallery/home-page-7.webp" alt="Automotive technician" loading="lazy"></div>
         <div class="split-content">
           <div class="eyebrow">04 — Why Auto Spare</div>
           <h2>Parts you can trust. Support you can count on.</h2>
@@ -612,17 +726,17 @@
             <h2>Performance deals.</h2>
           </div>
         </div>
-        <div class="deal-grid"><a class="deal reveal" href="404.html"><img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=68&fm=webp" alt="Brake System Deals" loading="lazy">
+        <div class="deal-grid"><a class="deal reveal" href="404.html"><img src="./gallery/home-page-2.webp" alt="Brake System Deals" loading="lazy">
             <div class="deal-content">
               <h3>Brake System Deals</h3>
               <p>Save up to 30%</p><span class="btn">Shop now</span>
             </div>
-          </a><a class="deal reveal" href="404.html"><img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=68&fm=webp" alt="Wheel & Tyre Offers" loading="lazy">
+          </a><a class="deal reveal" href="404.html"><img src="./gallery/home-page-4.webp" alt="Wheel & Tyre Offers" loading="lazy">
             <div class="deal-content">
               <h3>Wheel & Tyre Offers</h3>
               <p>Drive into the season</p><span class="btn">Shop now</span>
             </div>
-          </a><a class="deal reveal" href="404.html"><img src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&w=900&q=68&fm=webp" alt="Engine Essentials" loading="lazy">
+          </a><a class="deal reveal" href="404.html"><img src="./gallery/home-page-3.webp" alt="Engine Essentials" loading="lazy">
             <div class="deal-content">
               <h3>Engine Essentials</h3>
               <p>Built for reliability</p><span class="btn">Shop now</span>
@@ -658,10 +772,10 @@
           <p>Keep vehicle details and maintenance reminders close at hand. A simple digital garage built around the car you actually drive.</p>
           <div class="card" style="padding:18px;background:#171b1e;border-color:#303639;color:#fff"><b>BMW 3 Series · 2023</b>
             <p style="margin:7px 0;color:#aeb5b9">42,500 KM · Petrol</p>
-            <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="badge" style="position:static">Oil due soon</span><span style="padding:5px 8px;background:#303639;font-size:10px">Brake check</span></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap"><a href="404.html" class="badge" style="position:static">Oil due soon</a><a href="404.html" style="padding:5px 8px;background:#303639;font-size:10px">Brake check</a></div>
           </div>
         </div>
-        <div class="split-media"><img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=1100&q=68&fm=webp" alt="Vehicle interior" loading="lazy"></div>
+        <div class="split-media"><img src="./gallery/home-page-8.webp" alt="Vehicle interior" loading="lazy"></div>
       </div>
     </section>
     <section class="section">

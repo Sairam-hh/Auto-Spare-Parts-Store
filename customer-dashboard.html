@@ -182,7 +182,12 @@
     .auth-home{margin-top:15px;width:100%;justify-content:center}
     .auth-note{font-size:11px;color:#777;margin-top:20px}
     .dashboard{min-height:100vh;background:#f0efea}
-    .dash-sidebar{position:fixed;left:0;top:0;bottom:0;width:255px;background:var(--obsidian);color:#fff;padding:25px 16px;z-index:1100}
+.dash-sidebar{position:fixed;left:0;top:0;bottom:0;width:255px;background:var(--obsidian);color:#fff;padding:25px 16px 40px;z-index:1100;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+/* thin scrollbar so premium look poddu */
+.dash-sidebar::-webkit-scrollbar{width:6px}
+.dash-sidebar::-webkit-scrollbar-thumb{background:#2a2f33}
+.dash-sidebar::-webkit-scrollbar-thumb:hover{background:var(--red)}
+.dash-sidebar{scrollbar-width:thin;scrollbar-color:#2a2f33 transparent}
     .dash-logo{margin:0 10px 35px;display:flex;align-items:center;justify-content:space-between}
     .sidebar-user{display:none}
     .sidebar-user b{display:block;color:var(--red);font-size:10px;letter-spacing:1px;margin-bottom:4px}
@@ -438,7 +443,7 @@
             </div>
           </div>
         </div>
-        <div class="split-media"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=68&fm=webp" alt="Road trip" loading="lazy"></div>
+        <div class="split-media"><img src="./gallery/admin-page-1.webp" alt="Road trip" loading="lazy"></div>
       </div>
     </section>
     <section id="orders" class="panel">
@@ -458,14 +463,14 @@
         <table class="table">
           <thead><tr><th>Order</th><th>Product</th><th>Placed On</th><th>Status</th><th>Total</th><th>Actions</th></tr></thead>
           <tbody>
-            <tr><td style="font-weight:800">APS123456</td><td>Brembo Performance Brake Rotor</td><td>14 Sep 2026</td><td><span class="status amber">In Transit</span></td><td>₹5,499</td><td><div class="row-actions"><button class="icon-btn" data-panel-jump data-target="track" title="Track"><i class="fas fa-location-dot"></i></button><button class="icon-btn" data-toast="Invoice downloaded"><i class="fas fa-file-invoice"></i></button></div></td></tr>
-            <tr><td style="font-weight:800">APS123390</td><td>Mann-Filter Cabin Air Filter</td><td>02 Sep 2026</td><td><span class="status green">Delivered</span></td><td>₹649</td><td><div class="row-actions"><button class="icon-btn" data-toast="Reorder added to cart"><i class="fas fa-rotate"></i></button><button class="icon-btn" data-toast="Invoice downloaded"><i class="fas fa-file-invoice"></i></button></div></td></tr>
-            <tr><td style="font-weight:800">APS122980</td><td>Michelin Pilot Sport Tyre Set</td><td>21 Aug 2026</td><td><span class="status green">Delivered</span></td><td>₹32,996</td><td><div class="row-actions"><button class="icon-btn" data-toast="Reorder added to cart"><i class="fas fa-rotate"></i></button><button class="icon-btn" data-toast="Invoice downloaded"><i class="fas fa-file-invoice"></i></button></div></td></tr>
-            <tr><td style="font-weight:800">APS121765</td><td>Bosch Spark Plug Set</td><td>05 Aug 2026</td><td><span class="status red">Cancelled</span></td><td>₹899</td><td><div class="row-actions"><button class="icon-btn" data-toast="Reorder added to cart"><i class="fas fa-rotate"></i></button></div></td></tr>
+            <tr><td style="font-weight:800">APS123456</td><td>Brembo Performance Brake Rotor</td><td>14 Sep 2026</td><td><span class="status amber">In Transit</span></td><td>₹5,499</td><td><div class="row-actions"><button onclick="window.location.href='customer-error.html';" class="icon-btn"  title="Track"><i class="fas fa-location-dot"></i></button><button onclick="window.location.href='customer-error.html';" class="icon-btn" ><i class="fas fa-file-invoice"></i></button></div></td></tr>
+            <tr><td style="font-weight:800">APS123390</td><td>Mann-Filter Cabin Air Filter</td><td>02 Sep 2026</td><td><span class="status green">Delivered</span></td><td>₹649</td><td><div class="row-actions"><button onclick="window.location.href='customer-error.html';" class="icon-btn" ><i class="fas fa-rotate"></i></button><button onclick="window.location.href='customer-error.html';" class="icon-btn" ><i class="fas fa-file-invoice"></i></button></div></td></tr>
+            <tr><td style="font-weight:800">APS122980</td><td>Michelin Pilot Sport Tyre Set</td><td>21 Aug 2026</td><td><span class="status green">Delivered</span></td><td>₹32,996</td><td><div class="row-actions"><button onclick="window.location.href='customer-error.html';" class="icon-btn"><i class="fas fa-rotate"></i></button><button onclick="window.location.href='customer-error.html';" class="icon-btn" ><i class="fas fa-file-invoice"></i></button></div></td></tr>
+            <tr><td style="font-weight:800">APS121765</td><td>Bosch Spark Plug Set</td><td>05 Aug 2026</td><td><span class="status red">Cancelled</span></td><td>₹899</td><td><div class="row-actions"><button onclick="window.location.href='customer-error.html';" class="icon-btn" ><i class="fas fa-rotate"></i></button><button onclick="window.location.href='customer-error.html';" class="icon-btn" ><i class="fas fa-file-invoice"></i></button></div></td></tr>
           </tbody>
         </table>
       </div>
-      <div class="pager"><span>Showing 1–4 of 14 orders</span><div class="pbtns"><button data-page class="active">1</button><button data-page>2</button><button data-page><i class="fas fa-chevron-right"></i></button></div></div>
+      <div class="pager"><span>Showing 1–4 of 14 orders</span><div class="pbtns"><button onclick="window.location.href='customer-error.html';"  class="active">1</button><button onclick="window.location.href='customer-error.html';" >2</button><button onclick="window.location.href='customer-error.html';"><i class="fas fa-chevron-right"></i></button></div></div>
     </section>
     <section id="track" class="panel">
       <div class="eyebrow">Customer workspace</div>
@@ -473,7 +478,7 @@
       <div class="card" style="padding:26px;margin-bottom:20px">
         <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:end">
           <div class="field" style="flex:1;min-width:220px"><label>Order ID</label><input id="dashOrder" placeholder="APS123456" value="APS123456"></div>
-          <button class="btn" data-track><i class="fas fa-magnifying-glass"></i>Track Order</button>
+          <button onclick="window.location.href='customer-error.html';" class="btn" ><i class="fas fa-magnifying-glass"></i>Track Order</button>
         </div>
       </div>
       <div class="split">
@@ -489,7 +494,7 @@
             <div class="step"><div class="dot">05</div><span>Delivered</span></div>
           </div>
         </div>
-        <div class="split-media"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=68&fm=webp" alt="Delivery route" loading="lazy"></div>
+        <div class="split-media"><img src="./gallery/admin-page-1.webp" alt="Delivery route" loading="lazy"></div>
       </div>
       <div class="info-grid" style="margin-top:16px">
         <div class="info-card card"><i class="fas fa-truck"></i><h3 style="font-size:16px">Current Location</h3><p class="muted">Secunderabad Hub, Telangana</p></div>
@@ -502,7 +507,7 @@
           <div class="eyebrow">Customer workspace</div>
           <h2 style="font-size:32px">My Garage</h2>
         </div>
-        <button class="btn" data-toast="Vehicle added to garage"><i class="fas fa-plus"></i>Add Vehicle</button>
+        <button onclick="window.location.href='customer-error.html';" class="btn" ><i class="fas fa-plus"></i>Add Vehicle</button>
       </div>
       <div class="split" style="margin-bottom:16px">
         <div class="split-content">
@@ -514,7 +519,7 @@
             <div class="stat" style="background:#181c1e;border-color:#2a2f33;color:#fff"><strong>Good</strong><span style="color:#9aa0a4">garage health</span></div>
           </div>
         </div>
-        <div class="split-media"><img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=68&fm=webp" alt="BMW 3 Series" loading="lazy"></div>
+        <div class="split-media"><img src="./gallery/admin-page-2.webp" alt="BMW 3 Series" loading="lazy"></div>
       </div>
       <h3 style="font-size:20px;margin-bottom:12px">Maintenance log</h3>
       <div class="table-wrap">
@@ -532,10 +537,10 @@
       <div class="eyebrow">Customer workspace</div>
       <h2 style="font-size:32px;margin-bottom:18px">Wishlist</h2>
       <div class="product-grid">
-        <div class="card"><div class="product-img"><span class="heart" data-wish style="border:0;background:transparent;position:absolute;top:10px;right:10px"><i class="fas fa-heart" style="color:var(--red)"></i></span><img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=500&q=70&fm=webp" alt="Brake Rotor"></div><div class="product-info"><span class="brand">BREMBO</span><h3>Performance Brake Rotor</h3><div class="price">₹5,499</div><div class="product-actions"><button class="btn" data-cart>Add to Cart</button></div></div></div>
-        <div class="card"><div class="product-img"><span class="heart" data-wish style="border:0;background:transparent;position:absolute;top:10px;right:10px"><i class="fas fa-heart" style="color:var(--red)"></i></span><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=500&q=70&fm=webp" alt="Alternator"></div><div class="product-info"><span class="brand">DENSO</span><h3>Alternator Assembly</h3><div class="price">₹12,999</div><div class="product-actions"><button class="btn" data-cart>Add to Cart</button></div></div></div>
-        <div class="card"><div class="product-img"><span class="heart" data-wish style="border:0;background:transparent;position:absolute;top:10px;right:10px"><i class="fas fa-heart" style="color:var(--red)"></i></span><img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=500&q=70&fm=webp" alt="Tyre"></div><div class="product-info"><span class="brand">MICHELIN</span><h3>Pilot Sport Tyre 215/55</h3><div class="price">₹8,249</div><div class="product-actions"><button class="btn" data-cart>Add to Cart</button></div></div></div>
-        <div class="card"><div class="product-img"><span class="heart" data-wish style="border:0;background:transparent;position:absolute;top:10px;right:10px"><i class="fas fa-heart" style="color:var(--red)"></i></span><img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=500&q=70&fm=webp" alt="Filter"></div><div class="product-info"><span class="brand">MANN</span><h3>Cabin Air Filter</h3><div class="price">₹649</div><div class="product-actions"><button class="btn" data-cart>Add to Cart</button></div></div></div>
+        <div class="card"><div class="product-img"><span class="heart" data-wish style="border:0;background:transparent;position:absolute;top:10px;right:10px"><i class="fas fa-heart" style="color:var(--red)"></i></span><img src="./gallery/admin-page-3.webp" alt="Brake Rotor"></div><div class="product-info"><span class="brand">BREMBO</span><h3>Performance Brake Rotor</h3><div class="price">₹5,499</div><div class="product-actions"><button class="btn" data-cart>Add to Cart</button></div></div></div>
+        <div class="card"><div class="product-img"><span class="heart" data-wish style="border:0;background:transparent;position:absolute;top:10px;right:10px"><i class="fas fa-heart" style="color:var(--red)"></i></span><img src="./gallery/admin-page-4.webp" alt="Alternator"></div><div class="product-info"><span class="brand">DENSO</span><h3>Alternator Assembly</h3><div class="price">₹12,999</div><div class="product-actions"><button class="btn" data-cart>Add to Cart</button></div></div></div>
+        <div class="card"><div class="product-img"><span class="heart" data-wish style="border:0;background:transparent;position:absolute;top:10px;right:10px"><i class="fas fa-heart" style="color:var(--red)"></i></span><img src="./gallery/admin-page-5.webp" alt="Tyre"></div><div class="product-info"><span class="brand">MICHELIN</span><h3>Pilot Sport Tyre 215/55</h3><div class="price">₹8,249</div><div class="product-actions"><button class="btn" data-cart>Add to Cart</button></div></div></div>
+        <div class="card"><div class="product-img"><span class="heart" data-wish style="border:0;background:transparent;position:absolute;top:10px;right:10px"><i class="fas fa-heart" style="color:var(--red)"></i></span><img src="./gallery/admin-page-6.webp" alt="Filter"></div><div class="product-info"><span class="brand">MANN</span><h3>Cabin Air Filter</h3><div class="price">₹649</div><div class="product-actions"><button class="btn" data-cart>Add to Cart</button></div></div></div>
       </div>
     </section>
     <section id="vehicles" class="panel">
@@ -544,25 +549,25 @@
           <div class="eyebrow">Customer workspace</div>
           <h2 style="font-size:32px">Saved Vehicles</h2>
         </div>
-        <button class="btn" data-toast="New vehicle saved"><i class="fas fa-plus"></i>Add Vehicle</button>
+        <button  onclick="window.location.href='customer-error.html';" class="btn" ><i class="fas fa-plus"></i>Add Vehicle</button>
       </div>
       <div class="category-large">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=700&q=68&fm=webp" alt="BMW 3 Series">
+          <img src="./gallery/admin-page-7.webp" alt="BMW 3 Series">
           <div class="content">
             <span class="status green" style="width:max-content">Primary</span>
             <h3 style="margin-top:10px">BMW 3 Series</h3>
             <p>2023 · Petrol · Reg. TS09 AB 4521</p>
-            <div class="row-actions"><button class="btn ghost" data-toast="Now fitting parts for BMW 3 Series">Fit Parts</button><button class="icon-btn" data-remove-card><i class="fas fa-trash"></i></button></div>
+            <div class="row-actions"><button onclick="window.location.href='customer-error.html';" class="btn ghost" >Fit Parts</button><button onclick="window.location.href='customer-error.html';" class="icon-btn" ><i class="fas fa-trash"></i></button></div>
           </div>
         </div>
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1541348263662-e068662d82af?auto=format&fit=crop&w=700&q=68&fm=webp" alt="Hyundai Creta">
+          <img src="./gallery/admin-page-8.webp" alt="Hyundai Creta">
           <div class="content">
             <span class="status" style="width:max-content">Secondary</span>
             <h3 style="margin-top:10px">Hyundai Creta</h3>
             <p>2021 · Diesel · Reg. TS07 CD 9081</p>
-            <div class="row-actions"><button class="btn ghost" data-toast="Now fitting parts for Hyundai Creta">Fit Parts</button><button class="icon-btn" data-remove-card><i class="fas fa-trash"></i></button></div>
+            <div class="row-actions"><button onclick="window.location.href='customer-error.html';" class="btn ghost" >Fit Parts</button><button onclick="window.location.href='customer-error.html';" class="icon-btn" ><i class="fas fa-trash"></i></button></div>
           </div>
         </div>
       </div>
@@ -573,11 +578,11 @@
           <div class="eyebrow">Customer workspace</div>
           <h2 style="font-size:32px">Addresses</h2>
         </div>
-        <button class="btn" data-toast="New address added"><i class="fas fa-plus"></i>Add Address</button>
+        <button onclick="window.location.href='customer-error.html';" class="btn" ><i class="fas fa-plus"></i>Add Address</button>
       </div>
       <div class="info-grid">
-        <div class="addr-card"><span class="status green tag">Default</span><strong style="display:block;margin-bottom:6px">Home</strong><p class="muted">Rajkumar<br>Flat 402, Sri Nilayam Apartments, Kondapur<br>Hyderabad, Telangana - 500084<br>+91 98765 43210</p><div class="row-actions" style="margin-top:14px"><button class="icon-btn" data-toast="Editing address"><i class="fas fa-pen"></i></button><button class="icon-btn" data-remove-card><i class="fas fa-trash"></i></button></div></div>
-        <div class="addr-card"><span class="status tag">Work</span><strong style="display:block;margin-bottom:6px">Office</strong><p class="muted">Rajkumar<br>3rd Floor, Cyber Towers, Hitech City<br>Hyderabad, Telangana - 500081<br>+91 98765 43210</p><div class="row-actions" style="margin-top:14px"><button class="icon-btn" data-toast="Editing address"><i class="fas fa-pen"></i></button><button class="icon-btn" data-remove-card><i class="fas fa-trash"></i></button></div></div>
+        <div class="addr-card"><span class="status green tag">Default</span><strong style="display:block;margin-bottom:6px">Home</strong><p class="muted">Rajkumar<br>Flat 402, Sri Nilayam Apartments, Kondapur<br>Hyderabad, Telangana - 500084<br>+91 98765 43210</p><div class="row-actions" style="margin-top:14px"><button onclick="window.location.href='customer-error.html';" class="icon-btn" ><i class="fas fa-pen"></i></button><button onclick="window.location.href='customer-error.html';" class="icon-btn" ><i class="fas fa-trash"></i></button></div></div>
+        <div class="addr-card"><span class="status tag">Work</span><strong style="display:block;margin-bottom:6px">Office</strong><p class="muted">Rajkumar<br>3rd Floor, Cyber Towers, Hitech City<br>Hyderabad, Telangana - 500081<br>+91 98765 43210</p><div class="row-actions" style="margin-top:14px"><button onclick="window.location.href='customer-error.html';" class="icon-btn" ><i class="fas fa-pen"></i></button><button onclick="window.location.href='customer-error.html';" class="icon-btn" ><i class="fas fa-trash"></i></button></div></div>
       </div>
     </section>
     <section id="profile" class="panel">
@@ -597,7 +602,7 @@
           <div class="field"><label>Email</label><input value="rajkumar@example.com" disabled></div>
           <div class="field"><label>Phone</label><input value="+91 98765 43210"></div>
           <div class="field"><label>Date of Birth</label><input type="date" value="1996-04-12"></div>
-          <div style="grid-column:1/-1"><button class="btn" type="submit"><i class="fas fa-floppy-disk"></i>Save Changes</button></div>
+          <div style="grid-column:1/-1"><button onclick="window.location.href='customer-error.html';" class="btn" type="submit"><i class="fas fa-floppy-disk"></i>Save Changes</button></div>
         </form>
       </div>
     </section>
@@ -623,7 +628,7 @@
             <form class="form-grid" data-inlineform="Password updated">
               <div class="field"><label>Current Password</label><input type="password" placeholder="••••••••"></div>
               <div class="field"><label>New Password</label><input type="password" placeholder="••••••••"></div>
-              <div style="grid-column:1/-1"><button class="btn" type="submit"><i class="fas fa-key"></i>Update Password</button></div>
+              <div style="grid-column:1/-1"><button onclick="window.location.href='customer-error.html';" class="btn" type="submit"><i class="fas fa-key"></i>Update Password</button></div>
             </form>
             <div class="toggle-row" style="margin-top:10px"><span>Two-factor authentication</span><div class="switch"></div></div>
           </div>
@@ -631,7 +636,7 @@
             <h3 style="font-size:20px;margin-bottom:6px">Privacy</h3>
             <div class="toggle-row"><span>Share order history for personalized deals</span><div class="switch on"></div></div>
             <div class="toggle-row"><span>Show my reviews publicly</span><div class="switch on"></div></div>
-            <button class="btn ghost" style="margin-top:16px" data-toast="Data export requested"><i class="fas fa-download"></i>Download My Data</button>
+            <button onclick="window.location.href='customer-error.html';" class="btn ghost" style="margin-top:16px" ><i class="fas fa-download"></i>Download My Data</button>
           </div>
         </div>
       </div>
