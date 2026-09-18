@@ -33,8 +33,19 @@
     .glass{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
     .card{background:#fff;border:1px solid rgba(10,12,13,.08);transition:.35s var(--ease);position:relative;overflow:hidden}
     .card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:rgba(227,59,50,.28)}
-    .site-header{position:sticky;top:0;z-index:1000;background:rgba(10,12,13,.92);color:#fff;border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
-    .nav{height:90px;display:grid;grid-template-columns:190px 1fr auto;align-items:center;gap:20px}
+.site-header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(10,12,13,.92);
+  color:#fff;
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+    .nav{height:90px;display:grid;grid-template-columns:190px 1fr auto;align-items:center;gap:20px;}
     .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.7px}
     .logo-img{height:100px;width:auto;display:block;object-fit:contain}
     .logo-mark{width:32px;height:32px;background:var(--red);display:grid;place-items:center;transform:skew(-10deg);color:#fff}
@@ -47,7 +58,7 @@
     .nav-login{justify-self:end}
     .menu-btn{display:none;background:none;border:0;color:#fff;font-size:24px}
     .mobile-drawer{display:none}
-    .hero{background:var(--obsidian);color:#fff;min-height:680px;position:relative;overflow:hidden}
+    .hero{background:var(--obsidian);color:#fff;min-height:680px;position:relative;overflow:hidden;padding-top:50px;}
     .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(10,12,13,.98) 18%,rgba(10,12,13,.76) 53%,rgba(10,12,13,.18)),url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=70&fm=webp") center/cover}
     .hero .container{position:relative;z-index:1}
     .hero-grid{min-height:680px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px}
@@ -184,7 +195,8 @@
     .dashboard{min-height:100vh;background:#f0efea}
     .dash-sidebar{position:fixed;left:0;top:0;bottom:0;width:255px;background:var(--obsidian);color:#fff;padding:25px 16px;z-index:1100}
     .dash-logo{margin:0 10px 35px}
-    .dash-nav{display:grid;gap:4px}
+    .dash-nav{display:grid;gap:4px;}
+    
     .dash-nav button{background:none;border:0;color:#aab1b5;text-align:left;padding:13px 14px;display:flex;gap:11px;align-items:center;font-weight:700;font-size:13px}
     .dash-nav button:hover,.dash-nav button.active{background:#1d2225;color:#fff;border-left:3px solid var(--red)}
     .dash-main{margin-left:255px;padding:30px}
@@ -309,7 +321,112 @@
     @media(max-width:600px){
       .cart-panel{right:12px;left:12px;width:auto;top:78px}
       }
-    
+
+    /* custom dropdown — replaces the native select popup that overflowed on mobile */
+    .cselect{position:relative}
+    .cselect>button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 14px;background:#181c1e;color:#fff;border:1px solid rgba(255,255,255,.12);text-align:left;transition:.25s}
+    .cselect.open>button{border-color:var(--red);box-shadow:0 0 0 3px rgba(227,59,50,.1)}
+    .cselect>button i{font-size:11px;color:#9aa1a6;transition:.25s}
+    .cselect.open>button i{transform:rotate(180deg);color:var(--red)}
+    .cselect-list{position:absolute;left:0;right:0;top:calc(100% + 4px);background:#15191c;border:1px solid rgba(255,255,255,.14);max-height:210px;overflow-y:auto;z-index:60;display:none;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+    .cselect.open .cselect-list{display:block}
+    .cselect-list button{display:block;width:100%;text-align:left;padding:12px 14px;background:none;border:0;color:#d6dadd;font-size:14px}
+    .cselect-list button:hover,.cselect-list button.sel{background:var(--red);color:#fff}
+    @media(max-width:900px){
+      .logo-img{height:56px}
+      .vehicle-box{padding:18px 14px}
+      }
+
+      /* Premium Quick Links Hover */
+.site-footer ul li a{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:0;
+  color:rgba(255,255,255,.62);
+  text-decoration:none;
+  transition:
+    color .35s cubic-bezier(.22,1,.36,1),
+    transform .35s cubic-bezier(.22,1,.36,1),
+    letter-spacing .35s ease;
+}
+
+/* Small premium arrow */
+.site-footer ul li a::before{
+  content:"↗";
+  font-size:11px;
+  opacity:0;
+  width:0;
+  transform:translateX(-8px);
+  transition:
+    opacity .3s ease,
+    width .3s ease,
+    transform .35s cubic-bezier(.22,1,.36,1);
+}
+
+/* Elegant underline */
+.site-footer ul li a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    var(--amber),
+    rgba(255,255,255,.15)
+  );
+  box-shadow:0 0 8px rgba(245,185,66,.35);
+  transition:width .45s cubic-bezier(.22,1,.36,1);
+}
+
+.site-footer ul li a:hover{
+  color:var(--red);
+  transform:translateX(4px);
+  letter-spacing:.3px;
+}
+
+.site-footer ul li a:hover::before{
+  opacity:1;
+  width:17px;
+  transform:translateX(0);
+}
+
+.site-footer ul li a:hover::after{
+  width:100%;
+}
+
+.footer-contact ul li {
+  position: relative;
+  width: fit-content;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: default;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding-left: 0;
+}
+
+.footer-contact ul li::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--amber);
+  transform: translateY(-50%);
+  transition: width 0.3s ease;
+}
+
+.footer-contact ul li:hover {
+  color: var(--red);
+  transform: translateX(12px);
+}
+
+.footer-contact ul li:hover::before {
+  width: 8px;
+}
   </style>
 </head>
 
@@ -555,7 +672,7 @@
             <h2>Track your order.</h2>
           </div>
         </div>
-        <div style="display:flex;gap:10px;max-width:720px"><input id="orderId" class="field" style="padding:13px;border:1px solid #ccc" placeholder="Enter Order ID · APS123456"><button class="btn" data-track>Track</button></div>
+        <div style="display:flex;gap:10px;max-width:720px;flex-wrap:wrap"><input id="orderId" class="field" style="padding:13px;border:1px solid #ccc;flex:1 1 220px;min-width:0" placeholder="Enter Order ID · APS123456"><button class="btn" data-track>Track</button></div>
         <div class="timeline">
           <div class="step done">
             <div class="dot">01</div><span>Confirmed</span>
@@ -618,7 +735,7 @@
         <div class="social"><a href="404.html"><i class="fab fa-facebook-f"></i></a><a href="404.html"><i class="fab fa-instagram"></i></a><a href="404.html"><i class="fab fa-x-twitter"></i></a><a href="404.html"><i class="fab fa-linkedin-in"></i></a></div>
       </div>
       <div>
-        <h4>Quick Links</h4>
+        <h4 style="color:whitesmoke; text-transform: uppercase;">Quick Links</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="shop.html">Shop Parts</a></li>
@@ -628,7 +745,7 @@
         </ul>
       </div>
       <div>
-        <h4>Auto Parts</h4>
+        <h4 style="color:whitesmoke; text-transform: uppercase;">Auto Parts</h4>
         <ul>
           <li><a href="404.html">Brake Systems</a></li>
           <li><a href="404.html">Engine Parts</a></li>
@@ -638,8 +755,8 @@
           
         </ul>
       </div>
-      <div>
-        <h4>Contact</h4>
+      <div class="footer-contact">
+        <h4 style="color:whitesmoke; text-transform: uppercase;">Contact</h4>
         <ul>
           <li>+91 98765 43210</li>
           <li>stackly@autospare.in</li>
@@ -719,8 +836,72 @@
       document.getElementById('cartPanel')?.classList.remove('open')
     }
 
+    function closeAllSelects(except) {
+      document.querySelectorAll('.cselect.open').forEach(o => {
+        if (o !== except) o.classList.remove('open')
+      })
+    }
+
+    function buildCustomSelects() {
+      document.querySelectorAll('.vehicle-grid select').forEach(sel => {
+        if (sel.parentNode.classList.contains('cselect')) return;
+        const wrap = document.createElement('div');
+        wrap.className = 'cselect';
+        sel.parentNode.insertBefore(wrap, sel);
+        wrap.appendChild(sel);
+        sel.style.display = 'none';
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.setAttribute('aria-haspopup', 'listbox');
+        btn.setAttribute('aria-expanded', 'false');
+        const label = document.createElement('span');
+        label.textContent = sel.options[sel.selectedIndex].text;
+        btn.appendChild(label);
+        const caret = document.createElement('i');
+        caret.className = 'fas fa-chevron-down';
+        btn.appendChild(caret);
+
+        const list = document.createElement('div');
+        list.className = 'cselect-list';
+        list.setAttribute('role', 'listbox');
+
+        Array.from(sel.options).forEach((opt, i) => {
+          const item = document.createElement('button');
+          item.type = 'button';
+          item.setAttribute('role', 'option');
+          item.textContent = opt.text;
+          if (i === sel.selectedIndex) item.classList.add('sel');
+          item.addEventListener('click', e => {
+            e.stopPropagation();
+            sel.selectedIndex = i;
+            sel.dispatchEvent(new Event('change', {
+              bubbles: true
+            }));
+            label.textContent = opt.text;
+            list.querySelectorAll('button').forEach(b => b.classList.remove('sel'));
+            item.classList.add('sel');
+            wrap.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+          });
+          list.appendChild(item);
+        });
+
+        btn.addEventListener('click', e => {
+          e.stopPropagation();
+          closeAllSelects(wrap);
+          const open = wrap.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+
+        wrap.appendChild(btn);
+        wrap.appendChild(list);
+      });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       updateCartBadge();
+      buildCustomSelects();
       const toast = (msg) => {
         let t = document.querySelector('.toast');
         if (!t) {
@@ -768,10 +949,14 @@
       });
       document.getElementById('cartClose')?.addEventListener('click', closeCartPanel);
       document.addEventListener('click', (e) => {
+        closeAllSelects();
         const panel = document.getElementById('cartPanel');
         if (panel && panel.classList.contains('open') && !panel.contains(e.target) && !e.target.closest('#cartToggle') && !e.target.closest('#drawerCartToggle')) {
           closeCartPanel()
         }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeAllSelects()
       });
       document.getElementById('cartItems')?.addEventListener('click', (e) => {
         const itemEl = e.target.closest('.cart-item');

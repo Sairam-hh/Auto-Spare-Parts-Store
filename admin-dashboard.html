@@ -251,6 +251,75 @@
       from{opacity:0;transform:translateY(18px)}
       to{opacity:1;transform:none}
       }
+
+      /* =========================
+   PREMIUM LOGOUT BUTTON
+========================= */
+
+.dash-nav [data-logout] {
+  margin-top: 28px;
+  padding: 13px 14px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  background: rgba(227, 59, 50, 0.08);
+  color: #ff7770;
+  border: 1px solid rgba(227, 59, 50, 0.25);
+  border-left: 3px solid var(--red);
+
+  position: relative;
+  overflow: hidden;
+  transition:
+    background .3s var(--ease),
+    color .3s var(--ease),
+    transform .3s var(--ease),
+    border-color .3s var(--ease);
+}
+
+/* Small shine effect */
+.dash-nav [data-logout]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.12),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: left .5s ease;
+}
+
+/* Hover */
+.dash-nav [data-logout]:hover {
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red);
+  transform: translateX(5px);
+  box-shadow: 0 10px 25px rgba(227,59,50,.22);
+}
+
+/* Shine animation */
+.dash-nav [data-logout]:hover::before {
+  left: 130%;
+}
+
+/* Logout icon */
+.dash-nav [data-logout] i {
+  width: 18px;
+  text-align: center;
+  transition: transform .3s var(--ease);
+}
+
+.dash-nav [data-logout]:hover i {
+  transform: translateX(3px) rotate(-8deg);
+}
     @media(max-width:900px){
       .nav{grid-template-columns:1fr auto;height:68px}
       .nav-links,.nav-login{display:none}

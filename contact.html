@@ -33,7 +33,18 @@
     .glass{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
     .card{background:#fff;border:1px solid rgba(10,12,13,.08);transition:.35s var(--ease);position:relative;overflow:hidden}
     .card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:rgba(227,59,50,.28)}
-    .site-header{position:sticky;top:0;z-index:1000;background:rgba(10,12,13,.92);color:#fff;border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
+.site-header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(10,12,13,.92);
+  color:#fff;
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
     .nav{height:90px;display:grid;grid-template-columns:190px 1fr auto;align-items:center;gap:20px}
     .logo{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.7px}
     .logo-img{height:100px;width:auto;display:block;object-fit:contain}
@@ -47,7 +58,7 @@
     .nav-login{justify-self:end}
     .menu-btn{display:none;background:none;border:0;color:#fff;font-size:24px}
     .mobile-drawer{display:none}
-    .hero{background:var(--obsidian);color:#fff;min-height:680px;position:relative;overflow:hidden}
+    .hero{background:var(--obsidian);color:#fff;min-height:680px;position:relative;overflow:hidden;padding-top:50px;}
     .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(10,12,13,.98) 18%,rgba(10,12,13,.76) 53%,rgba(10,12,13,.18)),url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=70&fm=webp") center/cover}
     .hero .container{position:relative;z-index:1}
     .hero-grid{min-height:680px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px}
@@ -135,7 +146,7 @@
     .social a{width:36px;height:36px;border:1px solid #353b3f;display:grid;place-items:center;transition:.25s}
     .social a:hover{background:var(--red);border-color:var(--red);transform:translateY(-3px)}
     .footer-bottom{border-top:1px solid #262b2e;margin-top:45px;padding-top:18px;display:flex;justify-content:space-between;color:#737b7f;font-size:11px}
-    .page-hero{background:var(--obsidian);color:#fff;padding:90px 0}
+    .page-hero{background:var(--obsidian);color:#fff;padding:120px 0}
     .page-hero h1{font-size:clamp(42px,6vw,74px)}
     .page-hero p{max-width:650px;color:#aeb5b9;margin-top:18px}
     .filters-layout{display:grid;grid-template-columns:240px 1fr;gap:28px}
@@ -309,7 +320,98 @@
     @media(max-width:600px){
       .cart-panel{right:12px;left:12px;width:auto;top:78px}
       }
+
+      /* Premium Quick Links Hover */
+.site-footer ul li a{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:0;
+  color:rgba(255,255,255,.62);
+  text-decoration:none;
+  transition:
+    color .35s cubic-bezier(.22,1,.36,1),
+    transform .35s cubic-bezier(.22,1,.36,1),
+    letter-spacing .35s ease;
+}
+
+/* Small premium arrow */
+.site-footer ul li a::before{
+  content:"↗";
+  font-size:11px;
+  opacity:0;
+  width:0;
+  transform:translateX(-8px);
+  transition:
+    opacity .3s ease,
+    width .3s ease,
+    transform .35s cubic-bezier(.22,1,.36,1);
+}
+
+/* Elegant underline */
+.site-footer ul li a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    var(--amber),
+    rgba(255,255,255,.15)
+  );
+  box-shadow:0 0 8px rgba(245,185,66,.35);
+  transition:width .45s cubic-bezier(.22,1,.36,1);
+}
+
+.site-footer ul li a:hover{
+  color:var(--red);
+  transform:translateX(4px);
+  letter-spacing:.3px;
+}
+
+.site-footer ul li a:hover::before{
+  opacity:1;
+  width:17px;
+  transform:translateX(0);
+}
+
+.site-footer ul li a:hover::after{
+  width:100%;
+}
     
+
+.footer-contact ul li {
+  position: relative;
+  width: fit-content;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: default;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding-left: 0;
+}
+
+.footer-contact ul li::before {
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--amber);
+  transform: translateY(-50%);
+  transition: width 0.3s ease;
+}
+
+.footer-contact ul li:hover {
+  color: var(--red);
+  transform: translateX(12px);
+}
+
+.footer-contact ul li:hover::before {
+  width: 8px;
+}
   </style>
 </head>
 
@@ -417,7 +519,7 @@
         <div class="social"><a href="404.html"><i class="fab fa-facebook-f"></i></a><a href="404.html"><i class="fab fa-instagram"></i></a><a href="404.html"><i class="fab fa-x-twitter"></i></a><a href="404.html"><i class="fab fa-linkedin-in"></i></a></div>
       </div>
       <div>
-        <h4>Quick Links</h4>
+        <h4 style="color:whitesmoke; text-transform: uppercase;">Quick Links</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="shop.html">Shop Parts</a></li>
@@ -427,7 +529,7 @@
         </ul>
       </div>
       <div>
-        <h4>Auto Parts</h4>
+        <h4 style="color:whitesmoke; text-transform: uppercase;">Auto Parts</h4>
         <ul>
           <li><a href="404.html">Brake Systems</a></li>
           <li><a href="404.html">Engine Parts</a></li>
@@ -437,8 +539,8 @@
           
         </ul>
       </div>
-      <div>
-        <h4>Contact</h4>
+      <div class="footer-contact">
+        <h4 style="color:whitesmoke; text-transform: uppercase;">Contact</h4>
         <ul>
           <li>+91 98765 43210</li>
           <li>stackly@autospare.in</li>
